@@ -36,6 +36,5 @@ export default {
       huge: ['4rem', '1.2'],
     },
   },
-},
-plugins: [],
+  plugins: [],
 }
