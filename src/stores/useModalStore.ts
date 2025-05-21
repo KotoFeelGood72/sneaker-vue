@@ -3,8 +3,7 @@ import { defineStore, storeToRefs } from "pinia";
 export const useModalStore = defineStore("modal", {
   state: (): { modals: any } => ({
     modals: {
-      form: false,
-      burger: false,
+      auth: false,
     },
   }),
   actions: {
