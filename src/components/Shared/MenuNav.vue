@@ -1,5 +1,5 @@
 <template>
-  <nav class="nav">
+  <nav class="nav flex gap-5">
     <RouterLink
       v-for="(item, i) in MenuNavList"
       :to="item.link"

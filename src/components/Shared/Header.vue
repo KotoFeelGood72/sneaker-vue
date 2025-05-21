@@ -1,10 +1,10 @@
 <template>
   <header class="header">
-    <div class="container mx-auto bg-black">
+    <div class="container mx-auto flex justify-between items-center gap-8 py-4">
       <Logo />
       <MenuNav />
       <SearchInputs v-model="search" />
-      <div class="actions">
+      <div class="actions flex items-center">
         <RouterLink to="/">
           <img src="@/assets/img/like.svg" />
         </RouterLink>

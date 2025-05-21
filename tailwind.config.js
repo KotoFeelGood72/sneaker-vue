@@ -1,39 +1,44 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     screens: {
-      'sm': '375px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
+      sm: '375px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
       '2xl': '1536px',
-    }
-  },
-  extend: {
-    container: {
-      center: true,
-      padding: '1rem',
-      screens: {
-        sm: '640px',
-        md: '768px',
-        lg: '1024px',
-        xl: '1280px',
-        '2xl': '1400px',
-      },
     },
-    colors: {
-      primary: '#1E40AF',
-      secondary: '#F59E0B',
-      accent: '#10B981',
-      gray: {
-        100: '#f7fafc',
-        200: '#edf2f7',
-        900: '#1a202c',
+    extend: {
+      container: {
+        center: true,
+        padding: '1rem',
+        screens: {
+          sm: '640px',
+          md: '768px',
+          lg: '1024px',
+          xl: '1280px',
+          '2xl': '1560px',
+        },
       },
-    },
-    fontSize: {
-      huge: ['4rem', '1.2'],
+      colors: {
+        primary: '#1E40AF',
+        secondary: '#F59E0B',
+        accent: '#10B981',
+        light: '#F0F0F0',
+        lightXs: '#F2F2F2',
+        dark: '#222'
+      },
+      fontSize: {
+        huge: ['4rem', '1.2'],
+        '40': ['40px', '1.2'],
+        '30': ['30px', '1.3'],
+        '26': ['26px', '1.3'],
+        '20': ['20px', '1.4'],
+        '18': ['18px', '1.4'],
+        '16': ['16px', '1.5'],
+        '12': ['12px', '1.4'],
+      },
     },
   },
   plugins: [],
