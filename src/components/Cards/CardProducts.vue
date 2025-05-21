@@ -5,7 +5,7 @@
         <div>
           <img :src="product.img" />
         </div>
-        <div class="attr absolute bottom-4 left-6">
+        <div class="attr absolute bottom-4 left-6 flex items-center gap-4 opacity-40">
           <span>EU:</span>
           <span>{{ product.size }}</span>
         </div>

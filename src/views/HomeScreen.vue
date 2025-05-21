@@ -36,7 +36,7 @@
         </ul>
       </div>
     </section>
-    <section class="saleRealTime">
+    <section class="saleRealTime mb-20">
       <div class="container">
         <SectionHead
           title="Покупки в реальном времени"
@@ -47,6 +47,92 @@
         <ul class="flex items-center justify-start flex-wrap gap-6">
           <li
             v-for="(item, i) in products"
+            :key="'products-item-' + i"
+            class="lg:min-w-[15.35%] lg:max-w-[17%]"
+          >
+            <CardProducts :product="item" />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="homeCat mb-20">
+      <div class="container">
+        <SectionHead
+          title="Одежда"
+          button-link="/"
+          button-title="Все категории"
+          class="mb-10"
+        />
+        <ul class="flex items-center flex-wrap gap-6">
+          <li
+            v-for="(item, i) in clothesCategories"
+            :key="'cat-' + i"
+            class="flex-grow inline-flex w-auto"
+          >
+            <CardCat
+              :title="item.title"
+              :img="item.img"
+              :link="item.link"
+              class="lg:h-[333px]"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="saleRealTime mb-20">
+      <div class="container">
+        <SectionHead
+          title="Покупки в реальном времени"
+          button-link="/"
+          button-title="Все"
+          class="mb-10"
+        />
+        <ul class="flex items-center justify-start flex-wrap gap-6">
+          <li
+            v-for="(item, i) in clothesProducts"
+            :key="'products-item-' + i"
+            class="lg:min-w-[15.35%] lg:max-w-[17%]"
+          >
+            <CardProducts :product="item" />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="homeCat mb-20">
+      <div class="container">
+        <SectionHead
+          title="Аксессуары"
+          button-link="/"
+          button-title="Все категории"
+          class="mb-10"
+        />
+        <ul class="flex items-center flex-wrap gap-6">
+          <li
+            v-for="(item, i) in accessCategories"
+            :key="'cat-' + i"
+            class="flex-grow inline-flex w-auto"
+          >
+            <CardCat
+              :title="item.title"
+              :img="item.img"
+              :link="item.link"
+              class="lg:h-[333px]"
+            />
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="saleRealTime mb-20">
+      <div class="container">
+        <SectionHead
+          title="Покупки в реальном времени"
+          button-link="/"
+          button-title="Все"
+          class="mb-10"
+        />
+        <ul class="flex items-center justify-start flex-wrap gap-6">
+          <li
+            v-for="(item, i) in clothesProducts"
             :key="'products-item-' + i"
             class="lg:min-w-[15.35%] lg:max-w-[17%]"
           >
@@ -82,6 +168,22 @@ const categories = [
     link: "/",
   },
   { title: "Обувь для спорта", img: "/assets/img/categories/cat_5.png", link: "/" },
+];
+
+const clothesCategories = [
+  { title: "Верхняя одежда", img: "/assets/img/categories/clothes_1.png", link: "/" },
+  { title: "Свитшоты", img: "/assets/img/categories/clothes_2.png", link: "/" },
+  { title: "Худи", img: "/assets/img/categories/clothes_3.png", link: "/" },
+  { title: "Футболки", img: "/assets/img/categories/clothes_4.png", link: "/" },
+  { title: "Кепки и шапки", img: "/assets/img/categories/clothes_5.png", link: "/" },
+  { title: "Джинсы", img: "/assets/img/categories/clothes_6.png", link: "/" },
+];
+const accessCategories = [
+  { title: "Сумки и рюкзаки", img: "/assets/img/categories/access_1.png", link: "/" },
+  { title: "Часы", img: "/assets/img/categories/access_2.png", link: "/" },
+  { title: "Очки", img: "/assets/img/categories/access_3.png", link: "/" },
+  { title: "Кошельки", img: "/assets/img/categories/access_4.png", link: "/" },
+  { title: "Карточницы", img: "/assets/img/categories/access_5.png", link: "/" },
 ];
 
 const products = [
@@ -128,6 +230,48 @@ const products = [
     price: "14 500 р.",
   },
 ];
+const clothesProducts = [
+  {
+    title: "New Balance",
+    img: "/assets/img/products/clothes_1.png",
+    size: "41.5",
+    art: "4205 Sandal 'Black'",
+    price: "14 500 р.",
+  },
+  {
+    title: "New Balance",
+    img: "/assets/img/products/clothes_2.png",
+    size: "41.5",
+    art: "4205 Sandal 'Black'",
+    price: "14 500 р.",
+  },
+  {
+    title: "New Balance",
+    img: "/assets/img/products/clothes_3.png",
+    size: "41.5",
+    art: "4205 Sandal 'Black'",
+    price: "14 500 р.",
+  },
+  {
+    title: "New Balance",
+    img: "/assets/img/products/clothes_4.png",
+    size: "41.5",
+    art: "4205 Sandal 'Black'",
+    price: "14 500 р.",
+  },
+  {
+    title: "New Balance",
+    img: "/assets/img/products/clothes_5.png",
+    size: "41.5",
+    art: "4205 Sandal 'Black'",
+    price: "14 500 р.",
+  },
+  {
+    title: "New Balance",
+    img: "/assets/img/products/clothes_6.png",
+    size: "41.5",
+    art: "4205 Sandal 'Black'",
+    price: "14 500 р.",
+  },
+];
 </script>
-
-<style scoped lang="scss"></style>
