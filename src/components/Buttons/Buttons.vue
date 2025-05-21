@@ -21,7 +21,7 @@
     </div>
 
     <!-- Текст кнопки -->
-    <span :class="{ invisible: isLoading }">
+    <span :class="[{ invisible: isLoading }, 'text-inherit']">
       <slot />
     </span>
   </button>
@@ -58,8 +58,8 @@ const variantClasses = computed(() => {
         : "bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-300";
     case "outline":
       return props.isActive
-        ? "border-1 border-dark text-dark hover:bg-dark hover:text-white"
-        : "border-1 border-dark text-dark hover:bg-dark hover:text-white";
+        ? "border border-dark text-dark hover:bg-dark hover:text-white rounded-md"
+        : "border border-dark text-dark hover:bg-dark hover:text-white rounded-md";
     default:
       // primary
       return props.isActive

@@ -11,9 +11,7 @@
         <RouterLink to="/">
           <img src="@/assets/img/bag.svg" />
         </RouterLink>
-        <Buttons variant="secondary" size="small" @click="openModal('auth')"
-          >Войти</Buttons
-        >
+        <Buttons variant="outline" size="small" @click="openModal('auth')">Войти</Buttons>
       </div>
     </div>
   </header>
