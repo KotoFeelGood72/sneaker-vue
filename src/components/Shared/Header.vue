@@ -11,7 +11,9 @@
         <RouterLink to="/">
           <img src="@/assets/img/bag.svg" />
         </RouterLink>
-        <Buttons @click="nextAuth()">Войти</Buttons>
+        <Buttons variant="secondary" size="small" @click="openModal('auth')"
+          >Войти</Buttons
+        >
       </div>
     </div>
   </header>
@@ -23,8 +25,11 @@ import MenuNav from "./MenuNav.vue";
 import SearchInputs from "../Inputs/SearchInputs.vue";
 import { ref } from "vue";
 import Buttons from "../Buttons/Buttons.vue";
+import { useModalStore } from "@/stores/useModalStore";
 
 const search = ref<any>("");
 
 const nextAuth = () => {};
+
+const { openModal } = useModalStore();
 </script>
