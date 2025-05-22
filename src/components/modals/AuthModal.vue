@@ -11,33 +11,28 @@
     <h3 class="text-40 text-dark font-semibold flex items-center justify-center mb-10">
       Войти
     </h3>
-    <div class="auth-buttons flex flex-col gap-[10px]">
-      <button
-        type="button"
-        class="flex items-center justify-center gap-6 py-5 px-10 bg-lightXs rounded-md"
-      >
-        <p class="text-18 font-semibold text-dark">Войти через Telegram</p>
-        <div class="flex items-center justify-center">
-          <img src="@/assets/icons/tg.svg" alt="" />
-        </div>
-      </button>
-      <button
-        type="button"
-        class="flex items-center justify-center gap-6 py-5 px-10 bg-lightXs rounded-md"
-      >
-        <p class="text-18 font-semibold text-dark">Войти через почту</p>
-        <div class="flex items-center justify-center">
-          <img src="@/assets/icons/email.svg" alt="" />
-        </div>
-      </button>
-    </div>
+    <AuthMain v-if="active === 'main'" @on-click="onAuthMainClick" />
+    <AuthEmail v-if="active === 'email'" @on-click="onAuthMainClick" />
   </div>
 </template>
 
 <script setup lang="ts">
 import { useModalStore } from "@/stores/useModalStore";
+import AuthMain from "../auth/AuthMain.vue";
+import AuthEmail from "../auth/AuthEmail.vue";
+import { ref } from "vue";
 
 const { closeModal } = useModalStore();
+
+const active = ref<"main" | "email">("main");
+
+function onAuthMainClick(e: MouseEvent, type: string) {
+  if (type === "mail") {
+    active.value = "email";
+  } else if (type === "telegram") {
+    console.log("Запустить Telegram-auth");
+  }
+}
 </script>
 
 <style scoped lang="scss"></style>

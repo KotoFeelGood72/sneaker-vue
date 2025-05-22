@@ -11,6 +11,15 @@ const router = createRouter({
         layout: "default",
       },
     },
+    {
+      path: "/shop",
+      name: "shop",
+      component: () => import("../views/ShopScreen.vue"),
+      meta: {
+        layout: "default",
+        title: "Магазин",
+      },
+    },
   ],
 });
 
