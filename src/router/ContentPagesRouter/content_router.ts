@@ -46,6 +46,22 @@ const routes = [
       title: "Приложение",
     },
   },
+  {
+    path: "/news",
+    name: "news",
+    component: () => import("../../views/News/NewsView.vue"),
+    meta: {
+      layout: "default",
+      title: "Блог",
+    },
+    children: [
+      {
+        path: "",
+        name: "news-main",
+        component: () => import("../../views/News/NewsScreen.vue"),
+      },
+    ],
+  },
 ];
 
 export const ContentRouter = createRouter({
