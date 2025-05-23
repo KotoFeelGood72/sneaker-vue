@@ -19,6 +19,15 @@ const routes = [
       title: "Вопрос-ответ",
     },
   },
+  {
+    path: "/sizes",
+    name: "sizes",
+    component: () => import("../../views/ContentPages/SizeScreen.vue"),
+    meta: {
+      layout: "default",
+      title: "Как выбрать размер",
+    },
+  },
 ];
 
 export const ContentRouter = createRouter({
