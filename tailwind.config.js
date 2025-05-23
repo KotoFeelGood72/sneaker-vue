@@ -29,6 +29,7 @@ module.exports = {
         lightXs: '#F2F2F2',
         lightFt: '#B2B2B2',
         dark: '#222222',
+        'mercury': '#E8E8E8'
       },
       fontSize: {
         huge: ['4rem', '1.2'],
