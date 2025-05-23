@@ -1,7 +1,8 @@
 <template>
   <div class="container flex gap-6">
     <SidebarFilter />
-    <div class="list flex-grow">
+    <div class="list flex-grow flex flex-col gap-4">
+      <Sortering />
       <ul class="grid grid-cols-4 gap-6">
         <li v-for="(item, i) in products" :key="'products-item-' + i">
           <CardProducts :product="item" />
@@ -14,6 +15,7 @@
 <script setup lang="ts">
 import SidebarFilter from "@/components/Shared/SidebarFilter.vue";
 import CardProducts from "@/components/Cards/CardProducts.vue";
+import Sortering from "@/components/Shared/Sortering.vue";
 
 const products = [
   {

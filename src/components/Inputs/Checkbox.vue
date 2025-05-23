@@ -1,6 +1,5 @@
 <template>
   <label :for="id" class="relative flex items-center cursor-pointer select-none">
-    <!-- Скрываем настоящий чекбокс, но оставляем для peer -->
     <input
       type="checkbox"
       :id="id"
@@ -9,13 +8,9 @@
       :true-value="value"
       :false-value="''"
     />
-
-    <!-- Квадратик фона -->
     <span
       class="bg-[#E4E4E4] flex-shrink-0 h-4 w-4 bg-gray-200 peer-checked:bg-dark transition-colors flex items-center justify-center rounded-[2px]"
     ></span>
-
-    <!-- SVG-иконка галочки -->
     <span
       class="absolute top-[50%] -translate-y-[50%] left-0 h-4 w-4 opacity-0 peer-checked:opacity-100 transition-opacity flex items-center justify-center"
     >

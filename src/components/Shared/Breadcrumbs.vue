@@ -3,19 +3,22 @@
     class="breadcrumbs flex items-center text-sm text-gray-600"
     aria-label="Breadcrumb"
   >
-    <ol class="flex items-center space-x-2">
+    <ol class="flex items-center">
       <li v-for="(item, index) in items" :key="index" class="flex items-center">
         <template v-if="item.to && index < items.length - 1">
-          <RouterLink :to="item.to" class="hover:underline">
+          <RouterLink
+            :to="item.to"
+            class="opacity-50 hover:opacity-100 transition-all duration-300 text-14"
+          >
             {{ item.label }}
           </RouterLink>
         </template>
         <template v-else>
-          <span class="font-semibold">
+          <span class="text-14">
             {{ item.label }}
           </span>
         </template>
-        <span v-if="index < items.length - 1" class="mx-2"> / </span>
+        <span v-if="index < items.length - 1" class="mx-1"> / </span>
       </li>
     </ol>
   </nav>
