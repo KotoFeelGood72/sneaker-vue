@@ -10,6 +10,9 @@ module.exports = {
       '2xl': '1536px',
     },
     extend: {
+      boxShadow: {
+        'custom-deep': '0px 4px 22px rgba(0, 0, 0, 0.15), 0px 4px 44px rgba(37, 37, 37, 0.05) inset',
+      },
       container: {
         center: true,
         padding: '1rem',
@@ -30,8 +33,8 @@ module.exports = {
         dark: '#222',
         gray: '#DBDBDB',
         orange: '#FF9447',
-        borderGray: '#D8D8D8'
-        
+        borderGray: '#D8D8D8',
+        lightOrange: '#FFDABF'
       },
       fontSize: {
         huge: ['4rem', '1.2'],

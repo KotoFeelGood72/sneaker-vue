@@ -28,6 +28,15 @@ const routes = [
       title: "Как выбрать размер",
     },
   },
+  {
+    path: "/guarantee",
+    name: "guarantee",
+    component: () => import("../../views/ContentPages/GuaranteeScreen.vue"),
+    meta: {
+      layout: "default",
+      title: "Гарантия оригинальности",
+    },
+  },
 ];
 
 export const ContentRouter = createRouter({
