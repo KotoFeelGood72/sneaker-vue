@@ -1,10 +1,12 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { ContentRouter } from "./ContentPagesRouter/content_router";
+import { PrivacyRouter } from "./PrivacyRouter/privacy_router";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     ...ContentRouter.options.routes,
+    ...PrivacyRouter.options.routes,
     {
       path: "/",
       name: "home",
