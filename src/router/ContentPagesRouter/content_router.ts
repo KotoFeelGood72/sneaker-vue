@@ -47,6 +47,15 @@ const routes = [
     },
   },
   {
+    path: "/contacts",
+    name: "contacts",
+    component: () => import("../../views/ContentPages/ContactsScreen.vue"),
+    meta: {
+      layout: "default",
+      title: "Контакты",
+    },
+  },
+  {
     path: "/news",
     name: "news",
     component: () => import("../../views/News/NewsView.vue"),
