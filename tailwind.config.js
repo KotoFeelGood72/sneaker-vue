@@ -31,6 +31,7 @@ module.exports = {
         gray: '#DBDBDB',
         orange: '#FF9447',
         borderGray: '#D8D8D8'
+        
       },
       fontSize: {
         huge: ['4rem', '1.2'],

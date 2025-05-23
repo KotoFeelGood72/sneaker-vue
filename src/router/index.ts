@@ -1,8 +1,10 @@
 import { createRouter, createWebHistory } from "vue-router";
+import { ContentRouter } from "./ContentPagesRouter/content_router";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
+    ...ContentRouter.options.routes,
     {
       path: "/",
       name: "home",
@@ -18,6 +20,15 @@ const router = createRouter({
       meta: {
         layout: "default",
         title: "Магазин",
+      },
+    },
+    {
+      path: "/favorites",
+      name: "favorites",
+      component: () => import("../views/LikeScreen.vue"),
+      meta: {
+        layout: "default",
+        title: "Избранные",
       },
     },
   ],
