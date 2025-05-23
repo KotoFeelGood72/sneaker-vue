@@ -37,6 +37,15 @@ const routes = [
       title: "Гарантия оригинальности",
     },
   },
+  {
+    path: "/application",
+    name: "application",
+    component: () => import("../../views/ContentPages/ApplicationScreen.vue"),
+    meta: {
+      layout: "default",
+      title: "Приложение",
+    },
+  },
 ];
 
 export const ContentRouter = createRouter({
