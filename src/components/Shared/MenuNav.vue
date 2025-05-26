@@ -11,13 +11,13 @@
 
 <script setup lang="ts">
 const MenuNavList = [
-  { title: "Обувь", link: "/" },
-  { title: "Одежда", link: "/" },
-  { title: "Аксессуары", link: "/" },
-  { title: "Отзывы", link: "/" },
-  { title: "Доставка и оплата", link: "/" },
-  { title: "Блог", link: "/" },
-  { title: "Контакты", link: "/" },
+  { title: "Обувь", link: "/shop/shoes" },
+  { title: "Одежда", link: "/shop/clothes" },
+  { title: "Аксессуары", link: "/shop/accessories" },
+  { title: "Отзывы", link: "/reviews" },
+  { title: "Доставка и оплата", link: "/payments" },
+  { title: "Блог", link: "/news" },
+  { title: "Контакты", link: "/contacts" },
 ];
 </script>
 

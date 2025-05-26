@@ -5,7 +5,7 @@
       <MenuNav />
       <SearchInputs v-model="search" />
       <div class="actions flex items-center">
-        <RouterLink to="/">
+        <RouterLink to="/favorites">
           <img src="@/assets/img/like.svg" />
         </RouterLink>
         <RouterLink to="/">
