@@ -61,10 +61,9 @@ const variantClasses = computed(() => {
         ? "border border-dark text-dark hover:bg-dark hover:text-white rounded-md"
         : "border border-dark text-dark hover:bg-dark hover:text-white rounded-md";
     default:
-      // primary
       return props.isActive
-        ? "bg-black text-white font-semibold rounded-full transition-colors transition-all duration-300 ease-in-out hover:bg-gray-800 focus:ring-gray-900"
-        : "bg-light text-dark  font-semibold transition-colors transition-all duration-200 ease-in hover:bg-dark hover:text-white focus:ring-gray-900 rounded-full";
+        ? "bg-dark text-white font-semibold rounded-md transition-colors transition-all duration-300 ease-in-out hover:bg-gray-800 focus:ring-gray-900"
+        : "bg-dark text-white font-semibold rounded-md transition-colors transition-all duration-300 ease-in-out hover:bg-gray-800 focus:ring-gray-900";
   }
 });
 
@@ -74,7 +73,7 @@ const sizeClasses = computed(() => {
     case "small":
       return "px-3 py-1 text-14";
     case "large":
-      return "px-6 py-3 text-lg";
+      return "py-5 px-10 text-20 font-semibold";
     default:
       // medium
       return "px-10 py-4 text-18";

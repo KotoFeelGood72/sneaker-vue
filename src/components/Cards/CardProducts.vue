@@ -1,5 +1,6 @@
 <template>
-  <RouterLink :to="product.link">
+  <!-- <RouterLink :to="product.link"> -->
+  <RouterLink to="/shop/clothes/products-sneak">
     <div class="cardProducts flex flex-col gap-2">
       <div class="bg-light rounded-[8px] lg:py-16 px-4 relative">
         <div>

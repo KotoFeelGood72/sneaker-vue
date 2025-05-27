@@ -1,14 +1,10 @@
 <template>
   <div class="relative">
-    <!-- Кнопка влево -->
     <div
-      class="prev w-6 h-6 flex items-center justify-center cursor-pointer absolute top-[50%] -translate-y-[50%] left-0 z-10"
+      class="prev-button-size w-6 h-6 flex items-center justify-center cursor-pointer absolute top-[50%] -translate-y-[50%] left-0 z-10"
     >
       <Icons icon="tabler:chevron-left" :size="24" />
     </div>
-
-    <!-- Размеры -->
-
     <div class="w-full max-w-[382px] mx-auto">
       <Swiper
         :modules="[Navigation]"
@@ -17,7 +13,7 @@
         class="px-8 py-2"
         ref="swiperRef"
         @swiper="onSwiper"
-        :navigation="{ prevEl: '.prev', nextEl: '.next' }"
+        :navigation="{ prevEl: '.prev-button-size', nextEl: '.next-button-size' }"
       >
         <swiper-slide v-for="(size, index) in sizes" :key="index">
           <button
@@ -35,9 +31,8 @@
         </swiper-slide>
       </Swiper>
     </div>
-
     <div
-      class="next w-6 h-6 flex items-center justify-center cursor-pointer absolute top-[50%] -translate-y-[50%] right-0 z-10"
+      class="next-button-size w-6 h-6 flex items-center justify-center cursor-pointer absolute top-[50%] -translate-y-[50%] right-0 z-10"
     >
       <Icons icon="tabler:chevron-right" :size="24" />
     </div>

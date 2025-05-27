@@ -1,24 +1,38 @@
 <template>
   <div
-    class="p-4 rounded-lg border transition-colors cursor-pointer"
+    class="p-5 rounded-[10px] border transition-colors cursor-pointer flex flex-col gap-4"
     :class="{
-      'bg-black text-white border-black': selected,
-      'bg-white text-black border-gray-300': !selected,
+      'bg-dark text-white border-dark': selected,
+      'bg-white text-dark border-gray-300': !selected,
     }"
   >
-    <div class="flex justify-between items-start mb-2">
-      <div class="font-semibold text-lg">{{ delivery.datetime }}</div>
+    <div class="flex justify-between items-start">
       <div
-        class="px-3 py-1 rounded text-sm font-semibold"
+        class="font-semibold text-22 text-dark"
         :class="{
-          'bg-white text-black': selected,
-          'bg-black text-white': !selected,
+          'text-white': selected,
+          'text-dark': !selected,
+        }"
+      >
+        {{ delivery.datetime }}
+      </div>
+      <div
+        class="py-2 px-3 rounded-[4px] text-18 leading-4 font-semibold"
+        :class="{
+          'bg-white text-dark': selected,
+          'bg-dark text-white': !selected,
         }"
       >
         {{ delivery.price }} р.
       </div>
     </div>
-    <div class="text-sm text-gray-500" :class="{ 'text-white/80': selected }">
+    <div
+      class="text-16 text-dark font-normal"
+      :class="{
+        'text-white': selected,
+        'text-dark opacity-40': !selected,
+      }"
+    >
       {{ delivery.txt }}
     </div>
   </div>
