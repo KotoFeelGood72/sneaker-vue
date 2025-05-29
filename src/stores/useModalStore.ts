@@ -5,6 +5,7 @@ export const useModalStore = defineStore("modal", {
     modals: {
       auth: false,
       qarantee: false,
+      poizon: false,
     },
   }),
   actions: {

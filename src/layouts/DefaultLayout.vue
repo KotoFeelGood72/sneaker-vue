@@ -11,6 +11,7 @@
     ></div>
     <AuthModal v-if="activeModal == 'auth'" />
     <QaranteeModal v-if="activeModal == 'qarantee'" />
+    <PoizonModal v-if="activeModal == 'poizon'" />
     <Footer />
   </div>
 </template>
@@ -24,6 +25,7 @@ import AuthModal from "@/components/modals/AuthModal.vue";
 import Breadcrumbs from "@/components/Shared/Breadcrumbs.vue";
 import { useRoute } from "vue-router";
 import QaranteeModal from "@/components/modals/QaranteeModal.vue";
+import PoizonModal from "@/components/modals/PoizonModal.vue";
 
 const { modals } = useModalStoreRefs();
 const route = useRoute();
