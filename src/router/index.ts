@@ -32,6 +32,15 @@ const router = createRouter({
           },
         },
         {
+          path: "cart",
+          name: "shop-cart",
+          component: () => import("../views/Shop/ShopCart.vue"),
+          meta: {
+            layout: "default",
+            title: "Корзина",
+          },
+        },
+        {
           path: ":category",
           children: [
             {
