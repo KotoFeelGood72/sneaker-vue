@@ -1,16 +1,16 @@
 <template>
   <div
-    class="pozion-modal fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-[11] bg-white rounded-[20px] p-[50px] flex flex-col gap-10 overflow-y-auto overflow-x-hidden"
-    style="max-height: calc(100dvh - 20px)"
+    class="pozion-modal fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-[11]"
   >
+    <ClostBtn />
     <div
-      class="close_modal absolute lg:w-[100px] lg:h-[100px] flex items-center justify-center cursor-pointer left-[100%] top-0"
-      @click="closeModal('qarantee')"
+      class="max-w-[666px] overflow-y-auto flex flex-col gap-10 bg-white rounded-[20px] p-[50px]"
+      style="max-height: calc(100dvh - 40px)"
     >
-      <img src="@/assets/icons/close.svg" />
+      <PoizonHead :description="isDescriptionStep" v-if="poizonStep != 4" />
+
+      <component :is="stepComponent" />
     </div>
-    <PoizonHead :description="isDescriptionStep" />
-    <component :is="stepComponent" />
   </div>
 </template>
 
@@ -23,6 +23,7 @@ import PoizonStepFree from "../Poizon/PoizonStepFree.vue";
 import PoizonStepFour from "../Poizon/PoizonStepFour.vue";
 import { usePoizonStoreRefs } from "@/stores/usePoizonStore";
 import { computed } from "vue";
+import ClostBtn from "../Buttons/ClostBtn.vue";
 
 const { closeModal } = useModalStore();
 const { poizonStep } = usePoizonStoreRefs();

@@ -1,65 +1,70 @@
 <template>
-  <div class="bg-white rounded-xl shadow-md p-4 w-full max-w-md mx-auto">
+  <div class="flex flex-col gap-10">
     <!-- Фото -->
-    <div class="relative">
+    <div class="relative h-[333px]">
       <img
-        src="https://via.placeholder.com/400x300"
+        src="@/assets/img/poizon-img.png"
         alt="Товар"
         class="rounded-lg w-full object-contain"
       />
       <div
-        class="absolute top-2 left-2 bg-black bg-opacity-60 text-white text-12 px-2 py-1 rounded flex items-center gap-1"
+        class="absolute bottom-0 left-0 bg-dark p-[10px] rounded-[10px] flex items-center justify-center text-white text-22 gap-2"
       >
-        <Icons icon="mdi:camera" class="w-4 h-4" />
+        <div class="icon"><img src="@/assets/icons/photo.svg" /></div>
         <span>6 фото</span>
       </div>
     </div>
 
     <!-- Описание -->
-    <div class="mt-4">
-      <h3 class="text-lg font-semibold leading-snug">
+    <div class="flex flex-col gap-2">
+      <h3 class="text-36 text-dark font-bold">
         New Balance 574 Legacy 'Natural Indigo Anagora'
       </h3>
-      <p class="text-sm text-gray-500 mt-1">Размер 40.5</p>
-      <h3 class="text-2xl font-bold mt-2">16 756 ₽</h3>
+      <p class="text-30">Размер 40.5</p>
+      <h3 class="text-36 font-bold">16 756 ₽</h3>
     </div>
 
     <!-- Доставка -->
-    <div class="mt-6">
-      <p class="text-base font-medium mb-2">Доставка</p>
+    <div class="flex flex-col gap-6">
+      <p class="text-26 font-semibold text-dark">Доставка</p>
       <div class="flex gap-3 flex-col sm:flex-row">
         <div
           v-for="(option, index) in deliveryOptions"
           :key="index"
           @click="selectedDelivery = option"
-          class="flex-1 border rounded-lg p-4 cursor-pointer transition-all"
+          class="flex flex-col gap-4 p-5 rounded-[10px] cursor-pointer"
           :class="[
             selectedDelivery.label === option.label
-              ? 'bg-black text-white border-black'
-              : 'bg-white text-black border border-gray-300 hover:border-gray-400',
+              ? 'bg-dark text-white border-dark'
+              : 'bg-white text-dark border border-dark',
           ]"
         >
-          <p class="text-sm font-semibold mb-1">
-            {{ option.label }}
-          </p>
-          <div class="flex justify-between items-start gap-2">
+          <div class="flex items-center justify-between gap-4">
+            <p class="text-22 font-semibold mb-1">
+              {{ option.label }}
+            </p>
+
             <span
-              class="text-sm"
-              :class="
-                selectedDelivery.label === option.label ? 'text-white' : 'text-gray-500'
-              "
-            >
-              {{ option.description }}
-            </span>
-            <span
-              class="text-sm font-bold whitespace-nowrap px-2 py-1 rounded bg-white text-black"
+              class="text-18 flex items-center justify-center py-1 px-[10px] rounded-[4px] font-semibold"
               :class="
                 selectedDelivery.label === option.label
-                  ? 'bg-white text-black'
-                  : 'bg-black text-white'
+                  ? 'bg-white text-dark'
+                  : 'bg-dark text-white'
               "
             >
               {{ option.price.toLocaleString("ru-RU") }} р.
+            </span>
+          </div>
+          <div class="flex justify-between items-start gap-2">
+            <span
+              class="text-16"
+              :class="
+                selectedDelivery.label === option.label
+                  ? 'text-white'
+                  : 'text-dark opacity-40'
+              "
+            >
+              {{ option.description }}
             </span>
           </div>
         </div>
@@ -67,7 +72,7 @@
     </div>
 
     <!-- Кнопка -->
-    <Buttons class="mt-6 w-full" @onClick="nextPoizonStep">
+    <Buttons class="mt-6 w-full max-w-[390px] mx-auto" @onClick="nextPoizonStep">
       Заказать за {{ selectedDelivery.price }} ₽
     </Buttons>
   </div>
