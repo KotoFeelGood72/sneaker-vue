@@ -4,6 +4,8 @@
       baseClasses,
       variantClasses,
       sizeClasses,
+      color,
+      textColor,
       {
         'opacity-50 cursor-not-allowed': isDisabled,
         relative: isLoading,
@@ -36,6 +38,8 @@ const props = defineProps<{
   isActive?: boolean;
   variant?: "primary" | "secondary" | "outline";
   size?: "small" | "medium" | "large";
+  color?: string;
+  textColor?: string;
 }>();
 
 const emit = defineEmits<{

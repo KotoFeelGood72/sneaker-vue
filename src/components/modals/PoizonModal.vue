@@ -1,6 +1,7 @@
 <template>
   <div
-    class="qarantee-modal fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-[11] bg-white rounded-[20px] p-[50px] flex flex-col gap-10"
+    class="pozion-modal fixed top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%] z-[11] bg-white rounded-[20px] p-[50px] flex flex-col gap-10 overflow-y-auto overflow-x-hidden"
+    style="max-height: calc(100dvh - 20px)"
   >
     <div
       class="close_modal absolute lg:w-[100px] lg:h-[100px] flex items-center justify-center cursor-pointer left-[100%] top-0"
@@ -8,7 +9,7 @@
     >
       <img src="@/assets/icons/close.svg" />
     </div>
-    <PoizonHead />
+    <PoizonHead :description="isDescriptionStep" />
     <component :is="stepComponent" />
   </div>
 </template>
@@ -38,6 +39,19 @@ const stepComponent = computed(() => {
       return PoizonStepFour;
     default:
       return null;
+  }
+});
+
+const isDescriptionStep = computed(() => {
+  switch (poizonStep.value) {
+    case 1:
+      return "Нажмите на товаре Poizon кнопку “поделиться”. Скопируйте ссылку и вставьте сюда:";
+    case 2:
+      return "Выберите размер. Чтобы подобрать правильный, загляните в размерную сетку. Как подобрать размер?";
+    case 3:
+      return "Выберите размер и укажите цену в юанях с бирюзовой кнопкой.";
+    default:
+      return "Нажмите на товаре Poizon кнопку “поделиться”. Скопируйте ссылку и вставьте сюда:";
   }
 });
 </script>
