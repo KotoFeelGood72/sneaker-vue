@@ -11,8 +11,7 @@
     <h3 class="text-40 text-dark font-semibold flex items-center justify-center mb-10">
       Войти
     </h3>
-    <AuthMain v-if="active === 'main'" @on-click="onAuthMainClick" />
-    <AuthEmail v-if="active === 'email'" @on-click="onAuthMainClick" />
+    <component :is="isComponentsAuth"></component>
   </div>
 </template>
 
@@ -20,19 +19,33 @@
 import { useModalStore } from "@/stores/useModalStore";
 import AuthMain from "../auth/AuthMain.vue";
 import AuthEmail from "../auth/AuthEmail.vue";
-import { ref } from "vue";
+import AuthVerify from "../auth/AuthVerify.vue";
+import { useAuthStoreRefs } from "@/stores/useAuthStore";
+import { computed, ref } from "vue";
 
 const { closeModal } = useModalStore();
+const { authStep } = useAuthStoreRefs();
 
-const active = ref<"main" | "email">("main");
-
-function onAuthMainClick(e: MouseEvent, type: string) {
-  if (type === "mail") {
-    active.value = "email";
-  } else if (type === "telegram") {
-    console.log("Запустить Telegram-auth");
+const isComponentsAuth = computed(() => {
+  switch (authStep.value) {
+    case "main":
+      return AuthMain;
+    case "email":
+      return AuthEmail;
+    case "verify":
+      return AuthVerify;
+    default:
+      return AuthMain;
   }
-}
+});
+
+// function onAuthMainClick(e: MouseEvent, type: string) {
+//   if (type === "mail") {
+//     active.value = "email";
+//   } else if (type === "telegram") {
+//     console.log("Запустить Telegram-auth");
+//   }
+// }
 </script>
 
 <style scoped lang="scss"></style>

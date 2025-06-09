@@ -1,10 +1,10 @@
 <template>
   <!-- <RouterLink :to="product.link"> -->
-  <RouterLink to="/shop/clothes/products-sneak">
+  <RouterLink to="/shop/clothes/products-sneak" v-if="product">
     <div class="cardProducts flex flex-col gap-2">
       <div class="bg-light rounded-[8px] lg:py-16 px-4 relative">
         <div>
-          <ul
+          <!-- <ul
             class="sale-list absolute top-4 left-4 flex flex-wrap gap-1"
             v-if="product.sales?.length > 0"
           >
@@ -18,21 +18,21 @@
             >
               {{ item }}
             </li>
-          </ul>
-          <img :src="product.img" />
+          </ul> -->
+          <img :src="product.first_image" class="h-[135px] w-full object-cover" />
         </div>
         <div class="attr absolute bottom-4 left-6 flex items-center gap-4 opacity-40">
           <span>EU:</span>
-          <span>{{ product.size }}</span>
+          <!-- <span>{{ product.size }}</span> -->
         </div>
       </div>
       <div class="content flex flex-col gap-2">
-        <h3 class="text-26 font-semibold text-dark">{{ product.title }}</h3>
-        <p class="text-14 opacity-40">{{ product.art }}</p>
+        <h3 class="text-26 font-semibold text-dark">{{ product.name }}</h3>
+        <p class="text-14 opacity-40">{{ product.article }}</p>
         <span class="text-18 text-dark font-medium">{{ product.price }}</span>
-        <div class="split flex items-center gap-1 -mt-2" v-if="product.split">
+        <div class="split flex items-center gap-1 -mt-2" v-if="product.fit">
           <span class="bg-[#222222CC] px-[4px] py-[1px] text-white text-12 rounded-md">{{
-            product.split
+            product.fit
           }}</span>
           <span class="text-dark opacity-50 text-12">Сплит</span>
         </div>

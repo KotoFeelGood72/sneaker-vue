@@ -8,7 +8,7 @@
         <RouterLink to="/favorites">
           <img src="@/assets/img/like.svg" />
         </RouterLink>
-        <RouterLink to="/">
+        <RouterLink to="/shop/cart">
           <img src="@/assets/img/bag.svg" />
         </RouterLink>
         <Buttons variant="outline" size="small" @click="openModal('auth')">Войти</Buttons>

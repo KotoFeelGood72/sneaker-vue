@@ -1,6 +1,13 @@
 <template>
   <div class="">
-    <Inputs placeholder="Введите свою почту" v-model="email" class="mb-10" />
+    <div class="relative">
+      <div
+        class="icon-email absolute top-[50%] -translate-y-[50%] left-5 z-10 pointer-events-none"
+      >
+        <img src="@/assets/icons/email.png" />
+      </div>
+      <Inputs placeholder="Введите свою почту" v-model="email" class="mb-10" />
+    </div>
     <div class="flex items-center gap-[10px]">
       <button
         type="button"
@@ -15,7 +22,8 @@
       <button
         type="button"
         class="flex items-center justify-center gap-6 py-5 px-10 bg-dark opacity-70 rounded-md"
-        @click="handleClick($event, 'telegram')"
+        :class="isEmailValid ? 'opacity-100' : 'opacity-70'"
+        @click="sendOtp"
       >
         <p class="text-18 font-semibold text-white">Отправить код</p>
       </button>
@@ -24,18 +32,16 @@
 </template>
 
 <script setup lang="ts">
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import Inputs from "../Inputs/Inputs.vue";
+import { useAuthStoreRefs, useAuthStore } from "@/stores/useAuthStore";
 
-const emit = defineEmits<{
-  (e: "onClick", event: MouseEvent, type: string): void;
-}>();
+const { email } = useAuthStoreRefs();
+const { sendOtp } = useAuthStore();
 
-const handleClick = (e: MouseEvent, type: string) => {
-  emit("onClick", e, type);
-};
-
-const email = ref<string>("");
+const isEmailValid = computed(() => {
+  return !!email.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
+});
 </script>
 
 <style scoped lang="scss"></style>
