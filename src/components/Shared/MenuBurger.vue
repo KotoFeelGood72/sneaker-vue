@@ -11,7 +11,7 @@
     <!-- Выпадающее меню -->
 
     <div class="lg:hidden bg-white fixed left-0 right-0 z-40 h-screen px-4 py-2 top-16 overflow-hidden transition-all duration-300"
-         :class="isMenuOpen ? 'max-h-full py-2' : 'max-h-0 py-0'">
+         :class="isMenuOpen ? 'max-h-full py-2' : 'max-h-0 !py-0'">
       <div class="container mx-auto px-11 flex flex-col space-y-3 text-20 gap-2">
         <RouterLink
             v-for="(item, i) in MenuNavList"
