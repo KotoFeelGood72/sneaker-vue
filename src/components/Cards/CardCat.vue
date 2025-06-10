@@ -4,7 +4,7 @@
       <img src="@/assets/img/cat-bg.svg" class="w-full object-cover h-full" />
     </div>
     <div class="flex items-center justify-center">
-      <h2 class="text-30 font-semibold text-dark max-w-72 absolute top-5 left-5">
+      <h2 class="text-16 lg:text-30 font-semibold text-dark max-w-72 absolute top-5 left-5">
         {{ title }}
       </h2>
       <img :src="img" class="w-auto h-full" />

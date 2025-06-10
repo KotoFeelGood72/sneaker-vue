@@ -2,7 +2,7 @@
   <div class="like">
     <div class="container">
       <div class="mb-10">
-        <h1 class="text-40 font-semibold text-dark">Избранные</h1>
+        <h1 class="text-22 md:text-28 lg:text-40 font-semibold text-dark text-22">Избранные</h1>
       </div>
       <ul class="grid grid-cols-5 gap-x-6 gap-y-8">
         <li v-for="(item, i) in products" :key="'like-item-' + i">

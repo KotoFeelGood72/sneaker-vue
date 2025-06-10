@@ -7,7 +7,7 @@
         <div class="lg:w-[66px] h:w-[66px]">
           <img src="/assets/img/poizon.png" alt="" />
         </div>
-        <p class="text-20 font-semibold text-dark">
+        <p class="md:text-20 font-semibold text-dark text-14">
           Рассчитать стоимость товара из Poizon
         </p>
       </div>

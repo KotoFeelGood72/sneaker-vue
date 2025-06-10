@@ -77,7 +77,7 @@ const sizeClasses = computed(() => {
       return "px-6 py-3 text-lg";
     default:
       // medium
-      return "px-10 py-4 text-18";
+      return "px-10 py-3.5 lg:py-4 text-14 lg:text-18";
   }
 });
 </script>

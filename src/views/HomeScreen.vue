@@ -12,7 +12,7 @@
             <Buttons variant="primary" size="medium"> Мужское </Buttons>
             <Buttons variant="primary" size="medium"> Женское </Buttons>
           </div>
-          <PoizonButton />
+          <PoizonButton class="hidden lg:block"/>
         </div>
         <SectionHead
           title="Обувь"
@@ -20,7 +20,7 @@
           button-title="Все категории"
           class="mb-10"
         />
-        <ul class="flex items-center flex-wrap gap-6">
+        <ul class="flex items-center flex-wrap gap-1 lg:gap-6">
           <li
             v-for="(item, i) in categories"
             :key="'cat-' + i"
@@ -30,7 +30,7 @@
               :title="item.title"
               :img="item.img"
               :link="item.link"
-              class="lg:h-[333px]"
+              class=" h-[110px] lg:h-[333px]"
             />
           </li>
         </ul>
@@ -73,7 +73,7 @@
               :title="item.title"
               :img="item.img"
               :link="item.link"
-              class="lg:h-[333px]"
+              class=" h-[110px] lg:h-[333px]"
             />
           </li>
         </ul>
@@ -116,7 +116,7 @@
               :title="item.title"
               :img="item.img"
               :link="item.link"
-              class="lg:h-[333px]"
+              class=" h-[110px] lg:h-[333px]"
             />
           </li>
         </ul>
