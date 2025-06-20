@@ -1,6 +1,15 @@
+// src/stores/useAuthStore.ts
 import { defineStore, storeToRefs } from "pinia";
 import { useModalStore } from "./useModalStore";
 import { api } from "@/api/api";
+
+interface UserProfile {
+  id: number;
+  email: string;
+  first_name: string;
+  last_name: string;
+  // добавьте, что вернёт бек
+}
 
 export const useAuthStore = defineStore("auth", {
   state: () => ({
@@ -9,75 +18,88 @@ export const useAuthStore = defineStore("auth", {
     refresh: "",
     code: "",
     authStep: "main" as "main" | "email" | "verify",
+
+    /** ➜ данные текущего пользователя */
+    user: {} as Partial<UserProfile>,
   }),
 
   actions: {
-    /** утилита-помощник */
+    /* ---------- helpers ---------- */
     setTokens(access = "", refresh = "") {
       this.access = access;
       this.refresh = refresh;
 
-      if (access) localStorage.setItem("access", access);
-      else localStorage.removeItem("access");
+      access
+        ? localStorage.setItem("access", access)
+        : localStorage.removeItem("access");
 
-      if (refresh) localStorage.setItem("refresh", refresh);
-      else localStorage.removeItem("refresh");
+      refresh
+        ? localStorage.setItem("refresh", refresh)
+        : localStorage.removeItem("refresh");
     },
 
     setAuthStep(step: "main" | "email" | "verify") {
       this.authStep = step;
     },
 
-    /** /reset-code/ */
+    /* ---------- API ---------- */
+
+    /** POST auth/reset-code/ */
     async sendOtp() {
-      try {
-        const { data } = await api.post("/api/v1/auth/reset-code/", {
-          email: this.email,
-        });
-
-        this.setTokens(data?.access ?? "", data?.refresh ?? "");
-        this.setAuthStep("verify");
-      } catch (err) {
-        this.setTokens(); // чистим токены
-        throw err;
-      }
+      const { data } = await api.post("auth/reset-code/", {
+        email: this.email,
+      });
+      this.setTokens(data?.access ?? "", data?.refresh ?? "");
+      this.setAuthStep("verify");
     },
 
-    /** /register/ */
+    /** POST auth/register/ */
     async registerWithEmail() {
-      await api.post("/api/v1/auth/register/", { email: this.email });
+      await api.post("auth/register/", { email: this.email });
     },
 
-    /** /verify/ */
+    /** POST auth/verify/ */
     async authVerify() {
       const { closeAllModals } = useModalStore();
 
-      try {
-        const { data } = await api.post("/api/v1/auth/verify/", {
-          email: this.email,
-          code: this.code,
-        });
+      const { data } = await api.post("auth/verify/", {
+        email: this.email,
+        code: this.code,
+      });
 
-        if (!data?.access) {
-          this.setTokens();
-          throw new Error("Сервер не вернул access-токен");
-        }
+      if (!data?.access) throw new Error("Сервер не вернул access-токен");
 
-        this.setTokens(data.access, data.refresh ?? "");
-        this.setAuthStep("main");
-        closeAllModals();
-      } catch (err) {
-        throw err;
-      }
+      this.setTokens(data.access, data.refresh ?? "");
+      this.setAuthStep("main");
+      await this.getProfile();
+      closeAllModals();
+    },
+
+    /** POST auth/refresh/ */
+    async refreshTokens() {
+      if (!this.refresh) throw new Error("Нет refresh-токена");
+      const { data } = await api.post("auth/refresh/", {
+        refresh: this.refresh,
+      });
+      this.setTokens(data.access, data.refresh ?? this.refresh);
+      return data.access;
+    },
+
+    /** GET auth/user/profile/ */
+    async getProfile() {
+      const { data } = await api.get<UserProfile>("auth/user/profile/");
+      this.user = data;
     },
 
     logout() {
       this.email = "";
+      this.user = {};
       this.setTokens();
       this.setAuthStep("main");
     },
   },
+  persist: true,
 });
 
-/** удобный хук для компонентов */
+/** хук для компонентов */
 export const useAuthStoreRefs = () => storeToRefs(useAuthStore());

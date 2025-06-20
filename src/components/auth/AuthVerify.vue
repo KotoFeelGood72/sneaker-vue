@@ -16,12 +16,7 @@
         v-else
         type="button"
         class="text-22 text-dark opacity-40"
-        @click="
-          () => {
-            loginWithEmail();
-            startCountdown();
-          }
-        "
+        @click="handleResend"
       >
         Отправить код ещё раз
       </button>
@@ -49,45 +44,33 @@
 </template>
 
 <script setup lang="ts">
-import { computed, ref, onMounted } from "vue";
 import Inputs from "../Inputs/Inputs.vue";
 import { useAuthStoreRefs, useAuthStore } from "@/stores/useAuthStore";
+import { useResendTimer } from "@/composables/useResendTimer";
+import { computed, onMounted } from "vue";
 
 const { code } = useAuthStoreRefs();
-const { authVerify } = useAuthStore();
+const { authVerify, sendOtp } = useAuthStore();
 
-const countdown = ref(0);
-const timerKey = "resend_code_timer";
+/** таймер «повторной отправки» */
+const { countdown, isActive, start: startResendTimer } = useResendTimer({ delay: 30 });
 
-const startCountdown = () => {
-  const expires = Date.now() + 30 * 1000;
-  localStorage.setItem(timerKey, expires.toString());
-  updateCountdown();
-};
+/** валидный ли код */
+const isCodeValid = computed(() => /^\d{6}$/.test(code.value));
 
-const isCodeValid = computed(() => {
-  return /^\d{6}$/.test(code.value);
+/**
+ * Первая отправка кода (вызывайте на пред-экране или здесь в onMounted,
+ * чтобы таймер сразу стартовал при открытии модалки)
+ */
+onMounted(async () => {
+  await sendOtp();
+  startResendTimer();
 });
 
-const updateCountdown = () => {
-  const expires = Number(localStorage.getItem(timerKey));
-  const interval = setInterval(() => {
-    const remaining = Math.floor((expires - Date.now()) / 1000);
-    countdown.value = remaining;
-    if (remaining <= 0) {
-      countdown.value = 0;
-      clearInterval(interval);
-      localStorage.removeItem(timerKey);
-    }
-  }, 1000);
+const handleResend = async () => {
+  await sendOtp(); // письмо с новым кодом
+  startResendTimer(); // стартуем новый отсчёт
 };
-
-onMounted(() => {
-  const expires = Number(localStorage.getItem(timerKey));
-  if (expires && Date.now() < expires) {
-    updateCountdown();
-  }
-});
 </script>
 
 <style scoped lang="scss"></style>

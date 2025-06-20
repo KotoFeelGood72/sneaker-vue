@@ -12,7 +12,6 @@
       <button
         type="button"
         class="flex items-center justify-center gap-6 py-5 px-10 bg-lightXs rounded-md"
-        @click="handleClick($event, 'telegram')"
       >
         <p class="text-18 font-semibold text-dark">Войти через Telegram</p>
         <div class="flex items-center justify-center">
@@ -23,7 +22,7 @@
         type="button"
         class="flex items-center justify-center gap-6 py-5 px-10 bg-dark opacity-70 rounded-md"
         :class="isEmailValid ? 'opacity-100' : 'opacity-70'"
-        @click="sendOtp"
+        @click="handleSendCode"
       >
         <p class="text-18 font-semibold text-white">Отправить код</p>
       </button>
@@ -35,6 +34,9 @@
 import { computed, ref } from "vue";
 import Inputs from "../Inputs/Inputs.vue";
 import { useAuthStoreRefs, useAuthStore } from "@/stores/useAuthStore";
+import { useResendTimer } from "@/composables/useResendTimer";
+
+const { start: startResendTimer } = useResendTimer({ delay: 30 });
 
 const { email } = useAuthStoreRefs();
 const { sendOtp } = useAuthStore();
@@ -42,6 +44,13 @@ const { sendOtp } = useAuthStore();
 const isEmailValid = computed(() => {
   return !!email.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value);
 });
+
+const handleSendCode = async () => {
+  if (!isEmailValid.value) return;
+
+  await sendOtp(); // отправляем письмо
+  startResendTimer(); // запускаем 30-секундный таймер
+};
 </script>
 
 <style scoped lang="scss"></style>

@@ -151,7 +151,15 @@ import Buttons from "@/components/Buttons/Buttons.vue";
 import SectionHead from "@/components/Shared/SectionHead.vue";
 import CardCat from "@/components/Cards/CardCat.vue";
 import CardProducts from "@/components/Cards/CardProducts.vue";
+import { useProductStore, useProductStoreRefs } from "@/stores/useProductStore";
+import { onMounted } from "vue";
 
+const { loadNext, fetchProducts } = useProductStore();
+const { products, loading, hasNext } = useProductStoreRefs();
+
+onMounted(() => {
+  fetchProducts();
+});
 const slides = [
   { link: "/", img: "/assets/img/slide.jpg" },
   { link: "/", img: "/assets/img/slide.jpg" },
@@ -238,50 +246,50 @@ const accessCategories = [
   },
 ];
 
-const products = [
-  {
-    title: "New Balance",
-    img: "/assets/img/products/1.png",
-    size: "41.5",
-    art: "4205 Sandal 'Black'",
-    price: "14 500 р.",
-  },
-  {
-    title: "New Balance",
-    img: "/assets/img/products/2.png",
-    size: "41.5",
-    art: "4205 Sandal 'Black'",
-    price: "14 500 р.",
-  },
-  {
-    title: "New Balance",
-    img: "/assets/img/products/3.png",
-    size: "41.5",
-    art: "4205 Sandal 'Black'",
-    price: "14 500 р.",
-  },
-  {
-    title: "New Balance",
-    img: "/assets/img/products/4.png",
-    size: "41.5",
-    art: "4205 Sandal 'Black'",
-    price: "14 500 р.",
-  },
-  {
-    title: "New Balance",
-    img: "/assets/img/products/5.png",
-    size: "41.5",
-    art: "4205 Sandal 'Black'",
-    price: "14 500 р.",
-  },
-  {
-    title: "New Balance",
-    img: "/assets/img/products/6.png",
-    size: "41.5",
-    art: "4205 Sandal 'Black'",
-    price: "14 500 р.",
-  },
-];
+// const products = [
+//   {
+//     title: "New Balance",
+//     img: "/assets/img/products/1.png",
+//     size: "41.5",
+//     art: "4205 Sandal 'Black'",
+//     price: "14 500 р.",
+//   },
+//   {
+//     title: "New Balance",
+//     img: "/assets/img/products/2.png",
+//     size: "41.5",
+//     art: "4205 Sandal 'Black'",
+//     price: "14 500 р.",
+//   },
+//   {
+//     title: "New Balance",
+//     img: "/assets/img/products/3.png",
+//     size: "41.5",
+//     art: "4205 Sandal 'Black'",
+//     price: "14 500 р.",
+//   },
+//   {
+//     title: "New Balance",
+//     img: "/assets/img/products/4.png",
+//     size: "41.5",
+//     art: "4205 Sandal 'Black'",
+//     price: "14 500 р.",
+//   },
+//   {
+//     title: "New Balance",
+//     img: "/assets/img/products/5.png",
+//     size: "41.5",
+//     art: "4205 Sandal 'Black'",
+//     price: "14 500 р.",
+//   },
+//   {
+//     title: "New Balance",
+//     img: "/assets/img/products/6.png",
+//     size: "41.5",
+//     art: "4205 Sandal 'Black'",
+//     price: "14 500 р.",
+//   },
+// ];
 const clothesProducts = [
   {
     title: "New Balance",

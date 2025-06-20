@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { ContentRouter } from "./ContentPagesRouter/content_router";
 import { PrivacyRouter } from "./PrivacyRouter/privacy_router";
+import { useAuthStore } from "@/stores/useAuthStore";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -70,11 +71,33 @@ const router = createRouter({
       name: "favorites",
       component: () => import("../views/LikeScreen.vue"),
       meta: {
+        requiresAuth: true,
         layout: "default",
         title: "Избранные",
       },
     },
   ],
+});
+
+router.beforeEach((to) => {
+  /** store можно вызывать прямо здесь – Pinia уже инициализирована */
+  const auth = useAuthStore();
+
+  // 1) если в store ещё пусто, но в localStorage есть токен – восстановим
+  if (!auth.access) {
+    const token = localStorage.getItem("access");
+    if (token) auth.access = token;
+  }
+
+  // 2) защищённые маршруты
+  if (to.meta.requiresAuth && !auth.access) {
+    // можно сохранить запрошенный url, чтобы после логина вернуть пользователя
+    return {
+      name: "home",
+    };
+  }
+
+  return true;
 });
 
 export default router;
