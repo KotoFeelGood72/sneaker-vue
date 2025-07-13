@@ -10,6 +10,7 @@
         'opacity-50 cursor-not-allowed': isDisabled,
         relative: isLoading,
       },
+      { '!rounded-full': rounded },
     ]"
     :disabled="isDisabled || isLoading"
     @click="handleClick($event)"
@@ -40,6 +41,7 @@ const props = defineProps<{
   size?: "small" | "medium" | "large";
   color?: string;
   textColor?: string;
+  rounded?: boolean;
 }>();
 
 const emit = defineEmits<{
@@ -58,8 +60,8 @@ const variantClasses = computed(() => {
   switch (props.variant) {
     case "secondary":
       return props.isActive
-        ? "bg-gray-800 text-white hover:bg-gray-900 focus:ring-gray-900"
-        : "bg-gray-200 text-gray-800 hover:bg-gray-300 focus:ring-gray-300";
+        ? "bg-lightXs text-white hover:bg-gray-900 focus:ring-gray-900"
+        : "bg-lightXs text-gray-800 hover:bg-gray-300 focus:ring-gray-300";
     case "outline":
       return props.isActive
         ? "border border-dark text-dark hover:bg-dark hover:text-white rounded-md"
@@ -80,7 +82,7 @@ const sizeClasses = computed(() => {
       return "py-5 px-10 text-20 font-semibold";
     default:
       // medium
-      return "px-10 py-4 text-18";
+      return "px-10 lg:py-4 lg:text-18 font-medium py-[14px] w-full lg:w-auto text-14";
   }
 });
 </script>

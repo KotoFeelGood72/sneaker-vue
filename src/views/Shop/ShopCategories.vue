@@ -1,9 +1,9 @@
 <template>
   <div class="container flex gap-6">
-    <SidebarFilter />
+    <SidebarFilter class="lg:block hidden" />
     <div class="list flex-grow flex flex-col gap-4">
-      <Sortering />
-      <ul class="grid grid-cols-4 gap-6">
+      <Sortering class="lg:block hidden" />
+      <ul class="grid lg:grid-cols-4 lg:gap-6 grid-cols-2 gap-3">
         <li v-for="(item, i) in products" :key="'products-item-' + i">
           <CardProducts :product="item" />
         </li>

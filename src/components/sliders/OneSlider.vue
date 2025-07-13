@@ -26,17 +26,18 @@ const paginationOptions = computed(() => ({
 </script>
 
 <template>
-  <div class="one-slider relative pb-10">
+  <div class="one-slider relative lg:pb-10 pb-5">
     <swiper
       :modules="[Pagination]"
       :slides-per-view="1"
       :space-between="50"
       @slideChange="onSlideChange"
       :pagination="paginationOptions"
+      class="h-[126px] lg:h-auto"
     >
       <swiper-slide v-for="(item, i) in slides" :key="`slide-${props.id}-${i}`">
         <RouterLink :to="item.link">
-          <img :src="item.img" alt="" />
+          <img :src="item.img" class="w-full h-full lg:h-auto lg:w-auto" />
         </RouterLink>
       </swiper-slide>
     </swiper>
@@ -64,5 +65,18 @@ const paginationOptions = computed(() => ({
 }
 .swiper-pagination-bullet-active svg path {
   fill: #000;
+}
+
+@media (max-width: 1024px) {
+  .swiper-pagination-bullet {
+    width: 49px !important;
+    height: 5px;
+    background: transparent;
+    opacity: 1;
+  }
+  .swiper-pagination-bullet svg {
+    width: 49px;
+    height: 5px;
+  }
 }
 </style>
