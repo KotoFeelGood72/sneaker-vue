@@ -1,12 +1,14 @@
 <template>
-  <div class="flex-grow p-6 bg-light rounded-[20px] gap-7 flex flex-col max-w-[506px]">
+  <div
+    class="flex-grow lg:p-6 lg:bg-light rounded-[20px] lg:gap-7 flex flex-col max-w-[506px] p-0 gap-3"
+  >
     <div class="link_review flex items-center gap-2 cursor-pointer">
       <Icons icon="ei:star" :size="24" class="-mb-[2px]" />
-      <p class="text-20 text-dark opacity-60">Оставить отзыв</p>
+      <p class="lg:text-20 text-14 text-dark opacity-60">Оставить отзыв</p>
     </div>
-    <h3 class="text-26 text-dark font-semibold">New Balance</h3>
+    <h3 class="lg:text-26 text-dark font-semibold text-22">New Balance</h3>
     <div class="flex items-center gap-4">
-      <p class="text-dark text-28 font-semibold">6 800 р.</p>
+      <p class="text-dark lg:text-28 font-semibold text-22">6 800 р.</p>
       <div class="bg-[#DEDEDE] p-[10px] rounded-md flex items-center gap-[10px]">
         <div class="icon"><img src="/assets/img/s.png" /></div>
         <p class="text-14 text-dark">+500 за покупку</p>

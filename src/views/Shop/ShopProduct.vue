@@ -1,5 +1,5 @@
 <template>
-  <div class="container flex gap-10">
+  <div class="container flex lg:gap-10 flex-col lg:flex-row gap-5">
     <div class="max-w-[974px]">
       <ProductSlider :slides="slides" id="products-slider" />
     </div>

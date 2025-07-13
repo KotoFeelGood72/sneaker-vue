@@ -9,7 +9,7 @@
         :slides-per-view="1"
         watch-slides-progress
         :navigation="{ nextEl: '.next', prevEl: '.prev' }"
-        class="main-swiper bg-light rounded-3xl overflow-hidden"
+        class="main-swiper bg-light lg:rounded-3xl rounded-lg overflow-hidden"
       >
         <swiper-slide
           v-for="(item, i) in slides"
@@ -21,7 +21,7 @@
       </swiper>
 
       <div
-        class="absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] z-10 pointer-events-none flex justify-between items-center w-full px-5"
+        class="absolute top-[50%] left-[50%] -translate-y-[50%] -translate-x-[50%] z-10 pointer-events-none justify-between items-center w-full px-5 lg:flex hidden"
       >
         <div class="icon prev pointer-events-auto cursor-pointer">
           <Icons icon="octicon:chevron-left-16" :size="50" />
@@ -33,7 +33,7 @@
     </div>
 
     <!-- Превьюшки -->
-    <div>
+    <div class="lg:block hidden">
       <swiper
         :modules="[Thumbs, Navigation]"
         v-bind="sliderOptions.thumbs"
@@ -47,7 +47,7 @@
         <swiper-slide
           v-for="(item, i) in slides"
           :key="`thumb-slide-${props.id}-${i}`"
-          class="thumb-slide bg-light p-4 rounded-2xl cursor-pointer transition-all duration-200"
+          class="thumb-slide bg-light p-4 lg:rounded-2xl rounded-lg cursor-pointer transition-all duration-200"
         >
           <img :src="item.img" :alt="item.alt || 'thumb'" />
         </swiper-slide>

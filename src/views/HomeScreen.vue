@@ -49,7 +49,7 @@
           <li
             v-for="(item, i) in products"
             :key="'products-item-' + i"
-            class="lg:min-w-[15.35%] lg:max-w-[17%]"
+            class="lg:min-w-[15.35%] lg:max-w-[17%] max-w-[30%]"
           >
             <CardProducts :product="item" />
           </li>
@@ -89,11 +89,11 @@
           button-title="Все"
           class="mb-10"
         />
-        <ul class="flex items-center justify-start flex-wrap gap-6">
+        <ul class="flex items-center justify-start flex-wrap lg:gap-6 gap-2">
           <li
             v-for="(item, i) in clothesProducts"
             :key="'products-item-' + i"
-            class="lg:min-w-[15.35%] lg:max-w-[17%]"
+            class="lg:min-w-[15.35%] lg:max-w-[17%] max-w-[30%]"
           >
             <CardProducts :product="item" />
           </li>
@@ -320,58 +320,45 @@ const accessCategories = [
 const clothesProducts = [
   {
     title: "New Balance",
-    img: "/assets/img/products/clothes_1.png",
+    first_image: "/assets/img/products/clothes_1.png",
     size: "41.5",
     art: "4205 Sandal 'Black'",
     price: "14 500 р.",
   },
   {
     title: "New Balance",
-    img: "/assets/img/products/clothes_2.png",
+    first_image: "/assets/img/products/clothes_2.png",
     size: "41.5",
     art: "4205 Sandal 'Black'",
     price: "14 500 р.",
   },
   {
     title: "New Balance",
-    img: "/assets/img/products/clothes_3.png",
+    first_image: "/assets/img/products/clothes_3.png",
     size: "41.5",
     art: "4205 Sandal 'Black'",
     price: "14 500 р.",
   },
   {
     title: "New Balance",
-    img: "/assets/img/products/clothes_4.png",
+    first_image: "/assets/img/products/clothes_4.png",
     size: "41.5",
     art: "4205 Sandal 'Black'",
     price: "14 500 р.",
   },
   {
     title: "New Balance",
-    img: "/assets/img/products/clothes_5.png",
+    first_image: "/assets/img/products/clothes_5.png",
     size: "41.5",
     art: "4205 Sandal 'Black'",
     price: "14 500 р.",
   },
   {
     title: "New Balance",
-    img: "/assets/img/products/clothes_6.png",
+    first_image: "/assets/img/products/clothes_6.png",
     size: "41.5",
     art: "4205 Sandal 'Black'",
     price: "14 500 р.",
   },
 ];
 </script>
-
-<style lang="css" scoped>
-.custom-grid li:nth-child(1) {
-}
-.custom-grid li:nth-child(2) {
-}
-.custom-grid li:nth-child(3) {
-}
-.custom-grid li:nth-child(4) {
-}
-.custom-grid li:nth-child(5) {
-}
-</style>
