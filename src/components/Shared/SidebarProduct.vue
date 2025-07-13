@@ -14,7 +14,7 @@
         <p class="text-14 text-dark">+500 за покупку</p>
       </div>
     </div>
-    <Tabs :tabs="['EU', 'RU', 'US', 'UK', 'MM']" class="mb-[30px]">
+    <Tabs :tabs="['EU', 'RU', 'US', 'UK', 'MM']" class="lg:mb-[30px] mb-[10px]">
       <template #default="{ activeIndex }">
         <div v-if="activeIndex === 0">
           <ButtonSizeList @update:size="onSizeSelected" />
@@ -34,12 +34,12 @@
       </template>
     </Tabs>
     <div
-      class="text-20 opacity-60 underline underline-offset-2 [text-underline-position:from-font] [text-decoration-skip-ink:none]"
+      class="lg:text-20 text-14 lg:mb-0 mb-2 opacity-60 underline underline-offset-2 [text-underline-position:from-font] [text-decoration-skip-ink:none]"
     >
       Как выбрать размер?
     </div>
     <div class="divider bg-[#E8E8E8] h-[1px]"></div>
-    <div class="text-26 font-semibold">Доставка</div>
+    <div class="lg:text-26 text-18 font-semibold">Доставка</div>
     <DeliveryCard
       :delivery="{
         datetime: '25–30 дней',
@@ -59,18 +59,20 @@
     />
     <Buttons size="large">Добавить в корзину</Buttons>
     <div
-      class="split flex items-center justify-between text-18 font-semibold text-dark border border-dark px-[30px] py-[10px] rounded-md gap-7 cursor-pointer"
+      class="split flex items-center justify-between lg:text-18 font-semibold text-dark border border-dark lg:px-[30px] lg:py-[10px] rounded-md gap-7 cursor-pointer text-14 px-5 py-3"
     >
       <div>СПЛИТ</div>
       <div>по 3 400 р х 2 платежа</div>
-      <div><Icons icon="qlementine-icons:question-32" :size="30" /></div>
+      <div class="lg:w-8 lg:h-8 w-5 h-5 flex items-center justify-center">
+        <Icons icon="qlementine-icons:question-32" :size="30" />
+      </div>
     </div>
     <div class="divider bg-[#E8E8E8] h-[1px]"></div>
     <div>
       <div class="mb-6 flex items-center justify-between">
         <h3 class="text-26 font-semibold text-dark">Расцветки</h3>
         <button
-          class="flex items-center gap-1 bg-[#DEDEDE] rounded-full py-2 px-4 text-16 text-dark leading-4"
+          class="flex items-center gap-1 bg-[#DEDEDE] rounded-full py-2 px-4 lg:text-16 text-dark leading-4 text-14"
         >
           <p>Показать все</p>
           <div class="icon flex items-center justify-center -mb-[2px]">
@@ -119,8 +121,8 @@
     <div class="divider bg-[#E8E8E8] h-[1px]"></div>
     <div class="flex items-center justify-between">
       <div class="flex flex-col gap-1">
-        <p class="text-20 text-dark">Артикул</p>
-        <span class="text-dark text-26 font-semibold">743798209</span>
+        <p class="lg:text-20 text-dark text-16">Артикул</p>
+        <span class="text-dark lg:text-26 font-semibold text-18">743798209</span>
       </div>
       <div class="flex items-center justify-center">
         <Icons icon="mdi-light:check" :size="40" />
@@ -128,7 +130,7 @@
     </div>
     <div class="divider bg-[#E8E8E8] h-[1px]"></div>
     <SingleAccordion :index="0" title="Описание">
-      <div class="text-16 text-dark leading-[1.4]">
+      <div class="lg:text-16 text-dark leading-[1.4] text-14">
         New Balance 574 — лаконичная классика, которая отлично впишется в любой гардероб.
         Узнаваемый дизайн с прочной подошвой EVA и мягкой вставкой ENCAP. Дополнительную
         фиксацию стопы обеспечивает полиуретановый кант, а антибактериальная стелька
@@ -137,7 +139,7 @@
     </SingleAccordion>
     <div class="divider bg-[#E8E8E8] h-[1px]"></div>
     <SingleAccordion :index="0" title="Характеристики">
-      <div class="text-16 text-dark">
+      <div class="lg:text-16 text-dark text-14">
         <ul class="flex flex-col gap-3">
           <li v-for="item in list" :key="item.title" class="flex items-center gap-2">
             <p>{{ item.title }}:</p>

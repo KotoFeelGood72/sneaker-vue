@@ -4,7 +4,7 @@
       class="accordion-header flex items-center justify-between cursor-pointer mb-3"
       @click="toggle(index)"
     >
-      <h3 class="text-26 text-dark font-semibold">{{ title }}</h3>
+      <h3 class="lg:text-26 text-dark font-semibold text-18">{{ title }}</h3>
       <div class="flex items-center justify-center">
         <Icons
           :icon="openIndex === index ? 'ic:baseline-minus' : 'ic:baseline-plus'"

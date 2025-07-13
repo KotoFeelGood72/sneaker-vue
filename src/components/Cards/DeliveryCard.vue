@@ -1,14 +1,14 @@
 <template>
   <div
-    class="p-5 rounded-[10px] border transition-colors cursor-pointer flex flex-col gap-4"
+    class="lg:p-5 p-4 rounded-[10px] border transition-colors cursor-pointer flex flex-col lg:gap-4 gap-[6px]"
     :class="{
       'bg-dark text-white border-dark': selected,
       'bg-white text-dark border-gray-300': !selected,
     }"
   >
-    <div class="flex justify-between items-start">
+    <div class="flex justify-between lg:items-start items-center">
       <div
-        class="font-semibold text-22 text-dark"
+        class="font-semibold lg:text-22 text-14 text-dark"
         :class="{
           'text-white': selected,
           'text-dark': !selected,
@@ -17,7 +17,7 @@
         {{ delivery.datetime }}
       </div>
       <div
-        class="py-2 px-3 rounded-[4px] text-18 leading-4 font-semibold"
+        class="py-2 px-3 rounded-[4px] lg:text-18 leading-4 font-semibold text-14"
         :class="{
           'bg-white text-dark': selected,
           'bg-dark text-white': !selected,
@@ -27,7 +27,7 @@
       </div>
     </div>
     <div
-      class="text-16 text-dark font-normal"
+      class="lg:text-16 text-dark font-normal text-12"
       :class="{
         'text-white': selected,
         'text-dark opacity-40': !selected,

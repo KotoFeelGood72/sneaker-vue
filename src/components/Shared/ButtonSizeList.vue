@@ -8,19 +8,22 @@
     <div class="w-full max-w-[382px] mx-auto">
       <Swiper
         :modules="[Navigation]"
-        :slides-per-view="3.5"
         :space-between="12"
         class="px-8 py-2"
         ref="swiperRef"
         @swiper="onSwiper"
         :navigation="{ prevEl: '.prev-button-size', nextEl: '.next-button-size' }"
+        :breakpoints="{
+          0: { slidesPerView: 'auto' },
+          1024: { slidesPerView: 3.5 },
+        }"
       >
         <swiper-slide v-for="(size, index) in sizes" :key="index">
           <button
             ref="buttons"
             @click="selectSize(size, index)"
             :class="[
-              ' py-3 border border-dark rounded-md text-26 bg-white text-dark w-full',
+              ' lg:py-3 border border-dark rounded-md lg:text-26 bg-white text-dark lg:w-full text-16 py-2 px-3',
               selected === size
                 ? '!bg-dark text-white '
                 : 'border-gray-300 text-gray-500',
@@ -78,5 +81,15 @@ function selectSize(size: string, index: number) {
 <style scoped>
 .swiper {
   width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .swiper-slide {
+    width: auto;
+  }
+}
+
+.swiper-button-disabled {
+  display: none;
 }
 </style>

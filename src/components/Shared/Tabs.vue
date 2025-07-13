@@ -7,7 +7,7 @@
         v-for="(tab, i) in tabs"
         :key="i"
         @click="active = i"
-        class="text-16 text-uppercase pb-1"
+        class="lg:text-16 text-uppercase pb-1 text-20"
         :class="active === i ? 'border-b-2 border-dark' : 'border-b-2 border-transparent'"
       >
         {{ tab }}
