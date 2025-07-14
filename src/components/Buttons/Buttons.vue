@@ -79,7 +79,7 @@ const sizeClasses = computed(() => {
     case "small":
       return "px-3 py-1 text-14";
     case "large":
-      return "py-5 px-10 text-20 font-semibold";
+      return "lg:py-5 lg:px-10 lg:text-20 text-12 py-4 px-6 font-semibold";
     default:
       // medium
       return "px-10 lg:py-4 lg:text-18 font-medium py-[14px] w-full lg:w-auto text-14";

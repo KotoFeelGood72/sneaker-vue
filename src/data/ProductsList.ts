@@ -87,3 +87,30 @@ export const clothesProducts = [
     price: "14 500 р.",
   },
 ];
+
+export const cartItems = [
+  {
+    img: "/assets/img/cart-item.png",
+    title: "New Balance",
+    description: "4205 Sandal 'Black'",
+    size: "EU 41.5",
+    delivery: "Стандартная доставка 20-25 дней",
+    price: "14 500",
+  },
+  {
+    img: "/assets/img/cart-item.png",
+    title: "New Balance",
+    description: "4205 Sandal 'Black'",
+    size: "EU 41.5",
+    delivery: "Стандартная доставка 20-25 дней",
+    price: "14 500",
+  },
+  {
+    img: "/assets/img/cart-item.png",
+    title: "New Balance",
+    description: "4205 Sandal 'Black'",
+    size: "EU 41.5",
+    delivery: "Стандартная доставка 20-25 дней",
+    price: "14 500",
+  },
+];
