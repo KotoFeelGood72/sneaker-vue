@@ -1,27 +1,29 @@
 <template>
   <div class="container">
-    <h1 class="lg:text-40 font-semibold text-dark mb-10">Оплата</h1>
-    <div class="flex flex-col gap-6">
+    <h1 class="lg:text-40 text-22 font-semibold text-dark lg:mb-10 mb-4">Оплата</h1>
+    <div class="flex flex-col lg:gap-6 gap-4">
       <h2 class="lg:text-26 text-dark font-semibold">Способы оплаты</h2>
-      <p>
+      <p class="lg:text-16 text-10">
         При оформлении заказа вы сможете выбрать способ доставки и указать данные
         получателя. В нашем сервисе вы можете оплатить свой заказ любым удобным для вас
         способом:
       </p>
-      <ul class="flex flex-wrap gap-6">
+      <ul class="flex lg:gap-6 gap-4 lg:mb-0 mb-4">
         <li
           v-for="(item, i) in payments"
           :key="'payment-item-' + i"
-          class="border-r border-borderGray pr-6 flex items-center justify-center last:border-r-0 last:pr-0"
+          class="border-r border-borderGray lg:pr-6 pr-4 flex items-center justify-center last:border-r-0 last:pr-0"
         >
           <img :src="item.img" />
         </li>
       </ul>
     </div>
-    <div class="flex flex-wrap gap-8 items-center">
-      <div class="max-w-[60%]">
-        <h3 class="lg:text-26 font-semibold text-dark mb-6">Подробнее о "сплите"</h3>
-        <div class="lg:mb-[60px]">
+    <div class="flex flex-wrap lg:gap-8 gap-0 items-center lg:mb-0 mb-5">
+      <div class="lg:max-w-[60%]">
+        <h3 class="lg:text-26 font-semibold text-dark lg:mb-6 text-18 mb-4">
+          Подробнее о "сплите"
+        </h3>
+        <div class="lg:mb-[60px] lg:text-16 text-10 mb-4">
           Сплит - это возможность оплатить вашу покупку двумя платежами. Первая половина -
           сразу / вторая половина - после фото отчёта, при этом Вы ничего не
           переплачиваете - смысл сплита не в том, чтобы взять с Вас больше денег, он нужен
@@ -33,10 +35,10 @@
           Важно! – функция сплит доступна для заказа товаров стоимостью до 20.000 руб
         </div>
         <div>
-          <h3 class="lg:text-26 font-semibold text-dark mb-6">
+          <h3 class="lg:text-26 font-semibold text-dark lg:mb-6 text-18 mb-2">
             Как воспользоваться сплитом?
           </h3>
-          <p>
+          <p class="lg:text-16 text-10">
             Активировать оплату "сплитом" вы сможете на странице оформления заказа при
             выборе способа оплаты. У вас будет 2 варианта на выбор - оплатить полностью и
             сплит-платёж.
@@ -48,8 +50,12 @@
       </div>
     </div>
     <div>
-      <h4 class="lg:text-40 font-semibold text-dark lg:mb-[60px]">Доставка</h4>
-      <ul class="flex items-center gap-[10px] lg:mb-[60px]">
+      <h4
+        class="lg:text-40 text-22 font-semibold text-dark lg:mb-[60px] lg:text-left text-center mb-4"
+      >
+        Доставка
+      </h4>
+      <ul class="lg:flex hidden items-center gap-[10px] lg:mb-[60px]">
         <li
           v-for="(item, i) in deliveryMethods"
           :key="'delivery-method-' + i"
@@ -66,7 +72,11 @@
           </div>
         </li>
       </ul>
-      <div>
+      <img
+        class="lg:hidden flex items-center justify-center mb-4"
+        src="@/assets/img/delivery-img.svg"
+      />
+      <div class="lg:text-16 text-10">
         Весь путь, который проходит Ваш заказ, занимает 3-4 недели - от продавца в Китае к
         вашему пункту СДЭКа. После того, как ваш заказ будет успешно выкуплен, он
         тщательно проверяется площадкой Poizon, после чего едет на наш склад в Китае.
