@@ -1,7 +1,11 @@
 <template>
   <div class="container">
-    <h1 class="lg:text-40 font-semibold lg:mb-[60px]">Часто задаваемые вопросы</h1>
-    <ul class="max-w-[1000px] flex flex-col gap-8">
+    <h1
+      class="lg:text-40 font-semibold lg:mb-[60px] text-22 lg:text-left text-center mb-5"
+    >
+      Часто задаваемые вопросы
+    </h1>
+    <ul class="max-w-[1000px] flex flex-col lg:gap-8 gap-4">
       <li
         v-for="(item, i) in faqs"
         :key="'faq-' + i"
@@ -11,12 +15,17 @@
           @click="toggle(i)"
           class="w-full flex justify-between items-center text-left"
         >
-          <span class="lg:text-26 font-semibold">{{ i + 1 }}. {{ item.question }}</span>
+          <span class="lg:text-26 font-semibold text-18"
+            >{{ i + 1 }}. {{ item.question }}</span
+          >
           <span class="lg:text-26">{{ openIndex === i ? "−" : "+" }}</span>
         </button>
 
         <transition @before-enter="beforeEnter" @enter="enter" @leave="leave">
-          <div v-if="openIndex === i" class="overflow-hidden text-16 text-dark">
+          <div
+            v-if="openIndex === i"
+            class="overflow-hidden lg:text-16 text-14 text-dark"
+          >
             <ul v-if="Array.isArray(item.answer)" class="my-4">
               <li v-for="(line, j) in item.answer" :key="j">• {{ line }}</li>
             </ul>
