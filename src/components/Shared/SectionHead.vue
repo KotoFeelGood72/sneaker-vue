@@ -1,5 +1,5 @@
 <template>
-  <div class="section-head flex items-center justify-between gap-9">
+  <div class="section-head flex items-center justify-between lg:gap-9 gap-4">
     <h2 class="lg:text-40 text-22 text-dark font-semibold">{{ title }}</h2>
     <div class="section-head__button">
       <RouterLink

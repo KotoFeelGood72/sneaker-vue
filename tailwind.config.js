@@ -15,7 +15,7 @@ module.exports = {
       },
       container: {
         center: true,
-        padding: '1rem',
+        padding: '16px',
         screens: {
           sm: '640px',
           md: '768px',
@@ -51,6 +51,7 @@ module.exports = {
         '16': ['16px', '1.5'],
         '14': ['14px', '1.4'],
         '12': ['12px', '1.4'],
+        '10': ['10px', '1.4'],
       },
     },
   },
