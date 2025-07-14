@@ -1,13 +1,15 @@
 <template>
   <div class="container">
-    <h1 class="lg:text-40 text-dark font-semibold">Пользовательское соглашение</h1>
-    <p class="lg:py-[60px]">
+    <h1 class="lg:text-40 text-dark font-semibold text-22 lg:mb-0 mb-5">
+      Пользовательское соглашение
+    </h1>
+    <p class="lg:py-[60px] lg:text-16 text-10 lg:mb-0 mb-4">
       Настоящее Соглашение определяет порядок использования Платформы Пользователями.
       Любой Пользователь, который использует Платформу, должен соблюдать условия
       Соглашения. Помимо условий настоящего Соглашения, Пользователи должны соблюдать
       условия приложений к нему.
     </p>
-    <div class="flex flex-col lg:gap-[60px]">
+    <div class="flex flex-col lg:gap-[60px] gap-4">
       <ColText v-for="item in ColsText" :title="item.title" :text="item.text" />
     </div>
   </div>

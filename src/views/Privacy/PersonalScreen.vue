@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-    <h1 class="lg:text-40 text-dark font-semibold">
+    <h1 class="lg:text-40 text-dark font-semibold text-22 lg:mb-0 mb-4">
       Политика обработки персональных данных и файлов Cookie
     </h1>
-    <p class="lg:py-[60px]">
+    <p class="lg:py-[60px] lg:text-16 text-10 lg:mb-0 mb-4">
       Настоящая Политика обработки персональных данных разработана во исполнение
       требований Федерального закона Российской Федерации от 27.07.2006 № 152-ФЗ «О
       персональных данных», Общего регламента ЕС о защите данных 2016/679, Европейского
@@ -11,7 +11,7 @@
       отношении обработки их Персональных данных и о свободном перемещении таких данных
       (GDPR) и принятыми в соответствии с ним иными нормативными правовыми актами.
     </p>
-    <div class="flex flex-col lg:gap-[60px]">
+    <div class="flex flex-col lg:gap-[60px] gap-4">
       <ColText v-for="item in ColsText" :title="item.title" :text="item.text" />
     </div>
   </div>

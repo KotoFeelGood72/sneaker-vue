@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <h1 class="lg:text-40 text-dark font-semibold">
+    <h1 class="lg:text-40 text-dark font-semibold text-22 lg:mb-0 mb-4">
       Правила совершения платежей и возврата оплаты
     </h1>
-    <p class="lg:py-[60px]">
+    <p class="lg:py-[60px] lg:text-16 text-10 lg:mb-0 mb-4">
       Настоящие Правила устанавливают правила совершения платежных операций на Платформе,
       и возврата оплаты. Правила являются приложением к Соглашению.
     </p>
-    <div class="flex flex-col lg:gap-[60px]">
+    <div class="flex flex-col lg:gap-[60px] gap-4">
       <ColText
         v-for="item in ColsText"
         :title="item.title"
