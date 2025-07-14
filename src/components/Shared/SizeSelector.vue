@@ -1,12 +1,14 @@
 <template>
   <div class="max-w-[1200px] mx-auto">
-    <div class="grid grid-cols-8 gap-3">
+    <div
+      class="grid lg:grid-cols-8 lg:gap-3 gap-x-[5px] gap-y-2 grid-cols-4 lg:mb-0 mb-5"
+    >
       <button
         v-for="(size, index) in sizes"
         :key="index"
         @click="selectSize(size)"
         :class="[
-          'border rounded-md py-5 px-4 lg:text-26',
+          'border rounded-md lg:py-5 lg:px-4 lg:text-26 text-16 px-[6px] py-[9px]',
           selectedSize?.eu === size.eu ? 'bg-dark text-white' : 'border-dark ',
         ]"
       >
@@ -14,10 +16,14 @@
       </button>
     </div>
     <div v-if="selectedSize" class="lg:mt-[60px]">
-      <h2 class="lg:text-26 font-semibold text-dark lg:mb-[60px] text-center">
+      <h2
+        class="lg:text-26 font-semibold text-dark lg:mb-[60px] text-center text-18 mb-5"
+      >
         Таблица соответствия выбранного размера
       </h2>
-      <div class="grid grid-cols-2 lg:gap-x-[100px] max-w-[847px] mx-auto gap-6">
+      <div
+        class="grid lg:grid-cols-2 lg:gap-x-[100px] max-w-[847px] mx-auto lg:gap-6 gap-4 grid-cols-1"
+      >
         <RowItem countriesName="Европа (EU)" :selected-size="selectedSize.eu" />
         <RowItem countriesName="США (US)" :selected-size="selectedSize.us" />
         <RowItem countriesName="Длина (мм) (EU)" :selected-size="selectedSize.mm" />
