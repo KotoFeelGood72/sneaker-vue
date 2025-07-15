@@ -20,7 +20,7 @@ export const useAuthStore = defineStore("auth", {
     authStep: "main" as "main" | "email" | "verify",
 
     /** ➜ данные текущего пользователя */
-    user: {} as Partial<UserProfile>,
+    user: null as any,
   }),
 
   actions: {

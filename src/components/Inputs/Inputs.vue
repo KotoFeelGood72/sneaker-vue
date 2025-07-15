@@ -1,16 +1,21 @@
 <template>
   <div class="inputs bg-light rounded-md overflow-hidden relative">
     <div
-      class="icon absolute top-[50%] -translate-y-[50%] left-5 flex items-center justify-center"
+      class="icon absolute top-[50%] -translate-y-[50%] left-5 flex items-center justify-center max-lg:w-4 max-lg:h-4"
       v-if="icon"
     >
-      <Icons :icon="icon" :size="iconSize" color="inherit" />
+      <Icons
+        :icon="icon"
+        :size="iconSize"
+        color="inherit"
+        class="max-lg:w-full max-lg:h-full"
+      />
     </div>
     <input
       type="text"
       v-model="localValue"
       :placeholder="placeholder"
-      class="bg-transparent w-full h-full py-5 px-10 pl-16 text-dark placeholder:text-dark placeholder:opacity-50 focus:outline-none focus:ring-0 text-22"
+      class="bg-transparent w-full h-full lg:py-5 lg:px-10 lg:pl-16 text-dark placeholder:text-dark placeholder:opacity-50 focus:outline-none focus:ring-0 lg:text-22 text-12 px-3 pl-[38px] py-[10px]"
     />
   </div>
 </template>

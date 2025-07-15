@@ -21,7 +21,7 @@
         Отправить код ещё раз
       </button>
     </div>
-    <div class="flex items-center gap-[10px]">
+    <div class="grid lg:grid-cols-2 lg:gap-[10px] gap-[6px] grid-cols-1">
       <button
         type="button"
         class="flex items-center justify-center gap-6 py-5 px-10 bg-lightXs rounded-md"
