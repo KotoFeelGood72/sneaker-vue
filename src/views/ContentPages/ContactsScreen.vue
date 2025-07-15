@@ -2,10 +2,10 @@
   <div class="container">
     <h1 class="mb-6 lg:text-40 font-semibold text-dark">Контакты</h1>
     <div
-      class="bg-[#F0F0F0] rounded-[20px] border border-[#0000001A] p-5 flex flex-col gap-[30px]"
+      class="bg-[#F0F0F0] rounded-[20px] border border-[#0000001A] lg:p-5 p-4 flex flex-col lg:gap-[30px] gap-[10px]"
     >
       <div
-        class="p-5 rounded-[20px] flex items-center bg-dark max-w-[744px] w-full grid-cols-2 lg:grid-cols-3 gap-5"
+        class="lg:p-5 p-3 lg:rounded-[20px] rounded-[10px] flex items-center bg-dark max-w-[744px] w-full max-lg:grid lg:grid-cols-3 grid-cols-1 gap-5"
       >
         <ContactsTgCard
           v-for="(item, i) in topContacts"
@@ -14,7 +14,7 @@
         />
       </div>
       <div
-        class="p-5 rounded-[20px] flex items-center w-full grid-cols-2 lg:grid-cols-3 gap-5"
+        class="lg:p-5 p-3 rounded-[20px] flex items-center w-full max-lg:grid gap-5 grid-cols-1"
       >
         <ContactsTgCard
           v-for="(item, i) in bottomContacts"
