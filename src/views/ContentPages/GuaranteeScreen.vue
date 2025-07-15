@@ -1,17 +1,19 @@
 <template>
   <div class="container">
-    <div class="mb-9">
-      <div class="flex items-center lg:gap-[100px] mb-6">
-        <div class="max-w-[60%]">
-          <h1 class="text-dark lg:text-40 font-semibold mb-20">
+    <div class="lg:mb-9 mb-0">
+      <div class="flex items-center lg:gap-[100px] mb-6 flex-wrap">
+        <div class="lg:max-w-[60%] max-w-full">
+          <h1
+            class="text-dark lg:text-40 font-semibold lg:mb-20 mb-5 text-22 lg:text-left text-center"
+          >
             Sneaker Team - гарантия оригинальности
           </h1>
-          <div>
-            <p class="mb-4">
+          <div class="lg:mb-0 mb-5">
+            <p class="mb-4 lg:text-16 text-14">
               Мы гарантируем оригинальность товаров, заказанных через наш сервис, и сейчас
               расскажем, почему вы можете быть уверены в этом.
             </p>
-            <ul class="flex flex-col gap-4 pl-4 mb-4">
+            <ul class="flex flex-col gap-4 pl-4 mb-4 lg:text-16 text-14">
               <li class="list-disc">
                 <b>Проверенный поставщик.</b> Для начала стоит сказать, что мы делаем
                 выкуп товаров исключительно через проверенный временем маркетплейс Poizon,
@@ -29,7 +31,7 @@
                 под ваш индивидуальный запрос.
               </li>
             </ul>
-            <p>
+            <p class="lg:text-16 text-14">
               За всё время нашей работы с Poizon нам не поступал ни один поддельный товар.
             </p>
           </div>
@@ -48,7 +50,10 @@
       </p>
     </div>
     <div>
-      <div class="relative lg:min-h-[585px] mb-10">
+      <div class="lg:hidden block lg:mb-0 mb-5">
+        <img src="@/assets/img/circle.png" />
+      </div>
+      <div class="relative lg:min-h-[585px] mb-10 lg:block hidden">
         <div
           class="circle w-[585px] h-[585px] bg-lightOrange rounded-full absolute top-[50%] left-[50%] -translate-x-[50%] -translate-y-[50%]"
         ></div>
@@ -69,12 +74,17 @@
           </li>
         </ul>
       </div>
-      <div class="flex flex-col gap-6 lg:mb-[60px]">
-        <p>
-          Чтобы узнать больше о маркетплейсе Poizon, советуем прочитать статью
-          <a href="/" class="underline">подробней о Poizon</a> (осторожно, много
-          интересного текста)!
-        </p>
+      <div class="flex flex-col lg:gap-6 gap-4 lg:mb-[60px] mb-4 lg:text-16 text-14">
+        <div class="relative lg:pl-0 pl-[11px]">
+          <div
+            class="lg:hidden block absolute top-0 left-0 w-[3px] h-full bg-orange"
+          ></div>
+          <p>
+            Чтобы узнать больше о маркетплейсе Poizon, советуем прочитать статью
+            <a href="/" class="underline">подробней о Poizon</a> (осторожно, много
+            интересного текста)!
+          </p>
+        </div>
         <p>
           Если продавец пытается отправить подделку, Poizon принимает строгие меры,
           навсегда блокируя возможность сотрудничества.
@@ -86,10 +96,10 @@
           пломбы-наклейки.
         </p>
       </div>
-      <div class="flex items-center justify-center max-h-[730px]">
-        <img src="/assets/img/guarantee/big.png" alt="" />
+      <div class="flex items-center justify-center max-h-[730px] lg:mb-0 mb-5">
+        <img src="/assets/img/guarantee/big.png" class="lg:w-auto w-full object-cover" />
       </div>
-      <div class="flex flex-col gap-6">
+      <div class="flex flex-col lg:gap-6 lg:text-16 text-14 gap-4">
         <p>
           На бирках, пломбах и сертификате указан уникальный QR-код и номер заказа,
           который должен сканироваться и совпадать как с отчётом о выкупе, так и между
@@ -100,8 +110,10 @@
           пломбы-наклейки, являются важными и гарантируют, что ваш заказ действительно
           поступил с Poizon и прошёл все необходимые проверки.
         </p>
-        <div class="flex items-center gap-2">
-          <div class="line bg-orange w-[3px] h-[20px]"></div>
+        <div class="flex items-center gap-2 relative lg:pl-0 pl-[11px]">
+          <div
+            class="line bg-orange w-[3px] lg:h-[20px] h-full lg:static absolute top-0 left-0"
+          ></div>
           <p>
             Более подробно о том, как проверить все элементы подтверждения аутентификации
             от Poizon, мы рассказываем в этой статье.
