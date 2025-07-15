@@ -1,6 +1,8 @@
 <template>
   <div class="container">
-    <h1 class="mb-6 lg:text-40 font-semibold text-dark">Контакты</h1>
+    <h1 class="mb-6 lg:text-40 font-semibold text-dark max-lg:text-22 max-lg:text-center">
+      Контакты
+    </h1>
     <div
       class="bg-[#F0F0F0] rounded-[20px] border border-[#0000001A] lg:p-5 p-4 flex flex-col lg:gap-[30px] gap-[10px]"
     >
