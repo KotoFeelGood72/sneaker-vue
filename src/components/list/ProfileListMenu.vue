@@ -8,6 +8,10 @@
         </RouterLink>
       </li>
     </ul>
+    <div>
+      <div>Баланс: 0 Sneaker Coins</div>
+      <div>1 Sneaker Coins = 1 ₽</div>
+    </div>
   </div>
 </template>
 

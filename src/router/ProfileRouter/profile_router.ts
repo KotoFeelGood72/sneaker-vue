@@ -19,9 +19,9 @@ const routes = [
         },
       },
       {
-        path: "/change",
+        path: "change",
         name: "profile-change",
-        component: () => import("../../views/ProfilePages/ProfileView.vue"),
+        component: () => import("../../views/ProfilePages/ProfileChange.vue"),
         meta: {
           title: "Изменить данные",
         },
