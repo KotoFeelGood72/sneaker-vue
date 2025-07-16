@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import { ContentRouter } from "./ContentPagesRouter/content_router";
 import { PrivacyRouter } from "./PrivacyRouter/privacy_router";
+import { ProfileRouter } from "./ProfileRouter/profile_router";
 import { useAuthStore } from "@/stores/useAuthStore";
 
 const router = createRouter({
@@ -8,6 +9,7 @@ const router = createRouter({
   routes: [
     ...ContentRouter.options.routes,
     ...PrivacyRouter.options.routes,
+    ...ProfileRouter.options.routes,
     {
       path: "/",
       name: "home",

@@ -13,7 +13,10 @@
     >
       Войти
     </h3>
-    <p class="lg:text-16 max-w-[621px] mb-10" v-if="authStep === 'verify'">
+    <p
+      class="lg:text-16 max-w-[621px] lg:mb-10 mb-4 text-10 max-lg:text-center"
+      v-if="authStep === 'verify'"
+    >
       На ваш электронный адрес был отправлен код. Пожалуйста, проверьте свою почту и
       введите этот код для продолжения.
     </p>
