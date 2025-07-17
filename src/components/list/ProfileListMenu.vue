@@ -4,6 +4,7 @@
       class="lg:bg-black/10 lg:px-6 lg:py-10 rounded-[10px] lg:border lg:border-black/10"
     >
       <li v-for="(item, index) in profileListMenu" :key="index">
+        <div v-if="index === 0" class="border-b border-gray lg:hidden"></div>
         <RouterLink
           :to="`/profile/${item.link}`"
           :class="[
@@ -21,7 +22,7 @@
       </li>
     </ul>
     <div
-      class="flex flex-col lg:gap-6 lg:bg-black/10 lg:px-6 lg:py-9 rounded-[10px] lg:border"
+      class="flex flex-col lg:gap-6 lg:bg-black/10 lg:px-6 lg:py-9 rounded-[10px] lg:border lg:border-black/10"
     >
       <div class="lg:text-26 font-semibold text-18">Баланс: 0 Sneaker Coins</div>
       <div class="lg:text-20 opacity-60 text-14">1 Sneaker Coins = 1 ₽</div>
