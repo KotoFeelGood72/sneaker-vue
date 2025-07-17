@@ -1,10 +1,10 @@
 <template>
-  <div class="space-y-10">
-    <h3 class="lg:text-26 font-semibold text-center">Стадия заказа</h3>
-    <div class="flex lg:gap-10">
-      <div class="max-h-[498px] relative flex fleex-col justify-center">
+  <div class="lg:space-y-10 space-y-5">
+    <h3 class="lg:text-26 font-semibold text-center max-lg:pl-14">Стадия заказа</h3>
+    <div class="flex lg:gap-10 gap-6">
+      <div class="lg:max-h-[498px] max-h-[378px] relative flex fleex-col justify-center">
         <div
-          class="prev -rotate-90 lg:w-10 lg:h-10 cursor-pointer swiper-button-prev absolute left-1/2 -translate-x-1/2 -top-20"
+          class="prev -rotate-90 lg:w-10 lg:h-10 cursor-pointer swiper-button-prev absolute left-1/2 -translate-x-1/2 lg:-top-20 -top-10"
         >
           <Icons icon="fluent:chevron-right-48-regular" class="w-full h-full" />
         </div>
@@ -13,7 +13,7 @@
         >
           <Icons icon="fluent:chevron-right-48-regular" class="w-full h-full" />
         </div>
-        <div class="h-[418px]">
+        <div class="lg:h-[418px] h-[338px]">
           <swiper
             class="h-full"
             :modules="[Navigation]"

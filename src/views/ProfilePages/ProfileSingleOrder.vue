@@ -7,17 +7,17 @@
           placeholder="Введите номер посылки"
           class="lg:mb-10 mb-4"
         />
-        <div class="flex items-center justify-between gap-10 -mt-5 mb-10">
+        <div class="flex items-center justify-between gap-10 lg:-mt-5 lg:mb-10 mb-5">
           <div
-            class="inline-flex items-center gap-1 bg-light rounded-full text-dark py-1 px-4 cursor-pointer"
+            class="inline-flex items-center gap-1 bg-light rounded-full text-dark py-1 px-4 cursor-pointer max-lg:hidden"
           >
             <div class="w-3 h-3 flex items-center justify-center arrow-btn rotate-180">
               <Icons icon="meteor-icons:chevron-right" color="black" />
             </div>
             <p class="max-lg:text-12">Вернуться ко всем заказам</p>
           </div>
-          <div class="lg:text-20">Ожидается: 23.04.2025 г</div>
-          <div class="lg:text-20">Дней в пути: 11</div>
+          <div class="lg:text-20 text-10">Ожидается: {{ singleOrder.gettingDate }}</div>
+          <div class="lg:text-20 text-10">Дней в пути: {{ singleOrder.wait }}</div>
         </div>
         <OrdergalleryList :gallery="gallery" />
         <StageOrderList :orders="singleOrder" />
