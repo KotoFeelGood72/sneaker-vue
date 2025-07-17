@@ -27,9 +27,9 @@ const routes = [
         },
       },
       {
-        path: "/orders",
+        path: "orders",
         name: "profile-orders",
-        component: () => import("../../views/ProfilePages/ProfileView.vue"),
+        component: () => import("../../views/ProfilePages/ProfileOrder.vue"),
         meta: {
           title: "Заказы",
         },
