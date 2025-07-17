@@ -1,6 +1,9 @@
 <template>
   <RouterLink :to="order.slug" class="lg:space-y-2 space-y-1">
-    <div class="bg-light rounded-md overflow-hidden lg:h-[125px] h-[112px] p-2">
+    <div
+      class="bg-light rounded-md overflow-hidden lg:h-[125px] h-[112px] p-2"
+      :class="imgClass"
+    >
       <img :src="order.img" class="w-full h-full object-contain" />
     </div>
     <div>
@@ -13,6 +16,7 @@
 <script setup lang="ts">
 defineProps<{
   order: any;
+  imgClass?: any;
 }>();
 </script>
 

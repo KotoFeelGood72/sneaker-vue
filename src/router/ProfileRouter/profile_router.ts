@@ -29,10 +29,21 @@ const routes = [
       {
         path: "orders",
         name: "profile-orders",
-        component: () => import("../../views/ProfilePages/ProfileOrder.vue"),
         meta: {
           title: "Заказы",
         },
+        children: [
+          {
+            path: "",
+            component: () =>
+              import("../../views/ProfilePages/ProfileOrder.vue"),
+          },
+          {
+            path: ":id",
+            component: () =>
+              import("../../views/ProfilePages/ProfileSingleOrder.vue"),
+          },
+        ],
       },
       {
         path: "/referal",

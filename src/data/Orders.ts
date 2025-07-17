@@ -126,3 +126,61 @@ export const ordersListPreview = [
     ],
   },
 ];
+
+export const singleOrder = {
+  number: "123456",
+  status: "success",
+  address: "Пункт выдачи СДЭК: Калининград, Ленинский просп., 85",
+  wait: "10",
+  gettingDate: "14.05.2025 г",
+  gallery: [
+    "new-balance-4205-sandal-black",
+    "new-balance-4205-sandal-black",
+    "new-balance-4205-sandal-black",
+    "new-balance-4205-sandal-black",
+  ],
+  orders: [
+    {
+      img: "/assets/img/products/1.png",
+      title: "New Balance",
+      text: "4205 Sandal 'Black'",
+      id: "nb-123456-1",
+      slug: "new-balance-4205-sandal-black",
+    },
+    {
+      img: "/assets/img/products/1.png",
+      title: "New Balance",
+      text: "4205 Sandal 'Black'",
+      id: "nb-123456-2",
+      slug: "new-balance-4205-sandal-black",
+    },
+    {
+      img: "/assets/img/products/1.png",
+      title: "New Balance",
+      text: "4205 Sandal 'Black'",
+      id: "nb-123456-3",
+      slug: "new-balance-4205-sandal-black",
+    },
+    {
+      img: "/assets/img/products/1.png",
+      title: "New Balance",
+      text: "4205 Sandal 'Black'",
+      id: "nb-123456-4",
+      slug: "new-balance-4205-sandal-black",
+    },
+    {
+      img: "/assets/img/products/1.png",
+      title: "New Balance",
+      text: "4205 Sandal 'Black'",
+      id: "nb-123456-4",
+      slug: "new-balance-4205-sandal-black",
+    },
+    {
+      img: "/assets/img/products/1.png",
+      title: "New Balance",
+      text: "4205 Sandal 'Black'",
+      id: "nb-123456-4",
+      slug: "new-balance-4205-sandal-black",
+    },
+  ],
+};
