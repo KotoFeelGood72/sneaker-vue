@@ -38,7 +38,7 @@ const props = defineProps<{
   isDisabled?: boolean;
   isActive?: boolean;
   variant?: "primary" | "secondary" | "outline";
-  size?: "small" | "medium" | "large";
+  size?: "small" | "medium" | "large" | "large-x";
   color?: string;
   textColor?: string;
   rounded?: boolean;
@@ -80,6 +80,8 @@ const sizeClasses = computed(() => {
       return "px-3 py-1 text-14";
     case "large":
       return "lg:py-5 lg:px-10 lg:text-20 text-12 py-4 px-6 font-semibold";
+    case "large-x":
+      return "lg:py-3 lg:px-10 lg:text-20 text-14 py-4 px-6 font-semibold";
     default:
       // medium
       return "px-10 lg:py-4 lg:text-18 font-medium py-[14px] w-full lg:w-auto text-14";
