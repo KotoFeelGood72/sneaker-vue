@@ -1,9 +1,15 @@
 <template>
-  <div class="container">
-    <div>
-      <div>
-        <SearchInputs v-model="searchQuery" placeholder="Введите номер посылки" />
-        <div v-if="isEmpty">Здесь будут расположены ваши будущие покупки</div>
+  <div class="container lg:space-y-[60px]">
+    <div class="flex lg:gap-24 gap-10 flex-wrap justify-between">
+      <div class="max-w-[714px] w-full">
+        <SearchInputs
+          v-model="searchQuery"
+          placeholder="Введите номер посылки"
+          class="lg:mb-10 mb-4"
+        />
+        <div v-if="!isEmpty" class="lg:text-20 text-10">
+          Здесь будут расположены ваши будущие покупки
+        </div>
         <div v-else>
           <div v-for="(item, i) in ordersListPreview" :key="'all-order-row-' + i">
             <OrdersList :orders="item" />
@@ -18,7 +24,7 @@
         title="Вас может заинтересовать"
         button-link="/"
         button-title="Все"
-        class="lg:mb-10 mb-5"
+        class="lg:mb-10 mb-5 lg:pt-[65px]"
       />
       <ProductGrid :products="clothesProducts" :cutToThree="false" />
     </div>
