@@ -28,6 +28,7 @@
         </div>
         <div
           class="btn lg:px-5 lg:py-3 py-2 px-4 rounded-md border border-dark inline-flex lg:text-18 font-semibold cursor-pointer transition-all hover:bg-dark hover:text-white"
+          @click="openModal('createLink')"
         >
           Создать новую ссылку +
         </div>
@@ -109,6 +110,9 @@
 
 <script setup lang="ts">
 import ProfileListMenu from "@/components/list/ProfileListMenu.vue";
+import { useModalStore } from "@/stores/useModalStore";
+
+const { openModal } = useModalStore();
 
 const stats = [
   { num: "0", label: "Переходов" },

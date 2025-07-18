@@ -12,6 +12,7 @@
     <AuthModal v-if="activeModal == 'auth'" />
     <QaranteeModal v-if="activeModal == 'qarantee'" />
     <PoizonModal v-if="activeModal == 'poizon'" />
+    <CreateLinkModals v-if="activeModal == 'createLink'" />
     <Footer />
   </div>
 </template>
@@ -26,6 +27,7 @@ import Breadcrumbs from "@/components/Shared/Breadcrumbs.vue";
 import { useRoute } from "vue-router";
 import QaranteeModal from "@/components/modals/QaranteeModal.vue";
 import PoizonModal from "@/components/modals/PoizonModal.vue";
+import CreateLinkModals from "@/components/modals/CreateLinkModals.vue";
 
 const { modals } = useModalStoreRefs();
 const route = useRoute();

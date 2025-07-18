@@ -6,6 +6,7 @@ export const useModalStore = defineStore("modal", {
       auth: false,
       qarantee: false,
       poizon: false,
+      createLink: false,
     },
   }),
   actions: {

@@ -1,7 +1,7 @@
 <template>
   <div class="inputs bg-light rounded-md overflow-hidden relative">
     <div
-      class="icon absolute top-[50%] -translate-y-[50%] left-5 flex items-center justify-center max-lg:w-4 max-lg:h-4"
+      class="icon absolute top-[50%] -translate-y-[50%] left-3 flex items-center justify-center max-lg:w-4 max-lg:h-4"
       v-if="icon"
     >
       <img :src="`/assets/icon/ui/${icon}.svg`" />

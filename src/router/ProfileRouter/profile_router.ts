@@ -54,9 +54,9 @@ const routes = [
         ],
       },
       {
-        path: "/programs",
+        path: "programs",
         name: "profile-programs",
-        component: () => import("../../views/ProfilePages/ProfileView.vue"),
+        component: () => import("../../views/ProfilePages/ProfilePrograms.vue"),
         meta: {
           title: "Программа лояльности",
         },
