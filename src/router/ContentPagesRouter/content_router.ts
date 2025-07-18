@@ -38,6 +38,15 @@ const routes = [
     },
   },
   {
+    path: "/reviews",
+    name: "reviews",
+    component: () => import("../../views/ContentPages/ReviewsView.vue"),
+    meta: {
+      layout: "default",
+      title: "Отзывы от покупателей sneakerteam.ru",
+    },
+  },
+  {
     path: "/application",
     name: "application",
     component: () => import("../../views/ContentPages/ApplicationScreen.vue"),
