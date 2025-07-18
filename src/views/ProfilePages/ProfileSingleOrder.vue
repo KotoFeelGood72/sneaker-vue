@@ -43,7 +43,7 @@ import ProfileListMenu from "@/components/list/ProfileListMenu.vue";
 import SectionHead from "@/components/Shared/SectionHead.vue";
 import ProductGrid from "@/components/list/ProductGrid.vue";
 import StageOrderList from "@/components/list/StageOrderList.vue";
-import OrdergalleryList from "@/components/list/OrdergalleryList.vue";
+import OrdergalleryList from "@/components/list/OrderGalleryList.vue";
 import { singleOrder } from "@/data/Orders";
 import { clothesProducts } from "@/data/ProductsList";
 import { ref } from "vue";

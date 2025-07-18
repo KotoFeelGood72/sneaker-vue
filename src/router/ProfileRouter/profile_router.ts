@@ -27,6 +27,14 @@ const routes = [
         },
       },
       {
+        path: "referal",
+        name: "profile-referal",
+        component: () => import("../../views/ProfilePages/ProfileReferal.vue"),
+        meta: {
+          title: "Реферальная ссылка",
+        },
+      },
+      {
         path: "orders",
         name: "profile-orders",
         meta: {
@@ -46,16 +54,8 @@ const routes = [
         ],
       },
       {
-        path: "/referal",
-        name: "profile-referal",
-        component: () => import("../../views/ProfilePages/ProfileView.vue"),
-        meta: {
-          title: "Реферальная ссылка",
-        },
-      },
-      {
         path: "/programs",
-        name: "profile-referal",
+        name: "profile-programs",
         component: () => import("../../views/ProfilePages/ProfileView.vue"),
         meta: {
           title: "Программа лояльности",
