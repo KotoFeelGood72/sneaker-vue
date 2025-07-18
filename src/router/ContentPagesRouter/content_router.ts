@@ -47,6 +47,15 @@ const routes = [
     },
   },
   {
+    path: "/certificates",
+    name: "certificates",
+    component: () => import("../../views/ContentPages/CertificateView.vue"),
+    meta: {
+      layout: "default",
+      title: "Подарочный сертификат Sneaker Team",
+    },
+  },
+  {
     path: "/application",
     name: "application",
     component: () => import("../../views/ContentPages/ApplicationScreen.vue"),

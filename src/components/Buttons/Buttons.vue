@@ -24,7 +24,7 @@
     </div>
 
     <!-- Текст кнопки -->
-    <span :class="[{ invisible: isLoading }, 'text-inherit']">
+    <span :class="[{ invisible: isLoading }, 'text-inherit', textColor]">
       <slot />
     </span>
   </button>
