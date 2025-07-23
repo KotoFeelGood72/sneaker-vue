@@ -53,23 +53,23 @@ function handleClick(e: MouseEvent) {
 }
 
 // Общие классы для всех кнопок
-const baseClasses = "inline-flex items-center justify-center  transition-colors";
+const baseClasses = "inline-flex items-center justify-center transition-all duration-200";
 
 // Разные варианты оформления
 const variantClasses = computed(() => {
   switch (props.variant) {
     case "secondary":
       return props.isActive
-        ? "bg-lightXs text-white hover:bg-gray-900 focus:ring-gray-900"
-        : "bg-lightXs text-gray-800 hover:bg-gray-300 focus:ring-gray-300";
+        ? "bg-lightXs text-white hover:bg-gray-900 hover:-translate-y-[2px] focus:ring-gray-900"
+        : "bg-lightXs text-gray-800 hover:bg-gray-300 hover:-translate-y-[2px] focus:ring-gray-300";
     case "outline":
       return props.isActive
-        ? "border border-dark text-dark hover:bg-dark hover:text-white rounded-md"
-        : "border border-dark text-dark hover:bg-dark hover:text-white rounded-md";
+        ? "border border-dark text-dark hover:bg-dark hover:text-white hover:-translate-y-[2px] rounded-md"
+        : "border border-dark text-dark hover:bg-dark hover:text-white hover:-translate-y-[2px] rounded-md";
     default:
       return props.isActive
-        ? "bg-dark text-white font-semibold rounded-md transition-colors transition-all duration-300 ease-in-out hover:bg-gray-800 focus:ring-gray-900"
-        : "bg-dark text-white font-semibold rounded-md transition-colors transition-all duration-300 ease-in-out hover:bg-gray-800 focus:ring-gray-900";
+        ? "bg-dark text-white font-semibold rounded-md transition-all duration-200 hover:bg-gray-800 hover:-translate-y-[2px] focus:ring-gray-900"
+        : "bg-dark text-white font-semibold rounded-md transition-all duration-200 hover:bg-gray-800 hover:-translate-y-[2px] focus:ring-gray-900";
   }
 });
 

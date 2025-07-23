@@ -9,23 +9,13 @@
       <Inputs placeholder="Введите свою почту" v-model="email" class="lg:mb-10 mb-4" />
     </div>
     <div class="flex items-center lg:gap-[10px] gap-1 max-lg:flex-col">
-      <button
-        type="button"
-        class="flex items-center justify-center lg:gap-6 lg:py-5 lg:px-10 py-4 px-5 gap-4 bg-lightXs rounded-md max-lg:order-2 max-lg:w-full"
-      >
-        <p class="lg:text-18 text-12 font-semibold text-dark">Войти через Telegram</p>
-        <div class="flex items-center justify-center max-lg:w-4">
-          <img src="@/assets/icons/tg.svg" alt="Telegram icon" />
-        </div>
-      </button>
-      <button
-        type="button"
-        class="flex items-center justify-center lg:gap-6 lg:py-5 lg:px-10 py-4 px-5 gap-4 bg-dark opacity-70 rounded-md max-lg:order-1 max-lg:w-full"
-        :class="isEmailValid ? 'opacity-100' : 'opacity-70'"
+      <AuthBtn text="Войти через Telegram" icon="tg" color-sheme="light" />
+      <AuthBtn
+        text="Отправить код"
+        color-sheme="dark"
         @click="handleSendCode"
-      >
-        <p class="lg:text-18 text-12 font-semibold text-white">Отправить код</p>
-      </button>
+        class="flex-grow"
+      />
     </div>
   </div>
 </template>
@@ -35,6 +25,7 @@ import { computed, ref } from "vue";
 import Inputs from "../Inputs/Inputs.vue";
 import { useAuthStoreRefs, useAuthStore } from "@/stores/useAuthStore";
 import { useResendTimer } from "@/composables/useResendTimer";
+import AuthBtn from "../Buttons/AuthBtn.vue";
 
 const { start: startResendTimer } = useResendTimer({ delay: 30 });
 

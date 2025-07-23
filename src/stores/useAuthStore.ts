@@ -18,8 +18,6 @@ export const useAuthStore = defineStore("auth", {
     refresh: "",
     code: "",
     authStep: "main" as "main" | "email" | "verify",
-
-    /** ➜ данные текущего пользователя */
     user: null as any,
   }),
 
@@ -98,7 +96,9 @@ export const useAuthStore = defineStore("auth", {
       this.setAuthStep("main");
     },
   },
-  persist: true,
+  persist: {
+    paths: ["user"],
+  },
 });
 
 /** хук для компонентов */

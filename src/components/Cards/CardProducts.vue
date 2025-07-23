@@ -22,7 +22,7 @@
           <img :src="product.img" class="h-[135px] w-full object-contain" />
         </div>
         <div
-          class="attr absolute lg:bottom-4 lg:left-6 bottom-2 left-2 lg:text-12 text-10 flex items-center lg:gap-4 opacity-40 gap-1"
+          class="attr absolute lg:bottom-4 lg:left-6 bottom-2 left-2 lg:text-12 text-10 flex items-center opacity-40 gap-1"
         >
           <span>EU:</span>
           <span>41.5</span>
